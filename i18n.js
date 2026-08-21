@@ -1,8 +1,11 @@
 /* ============================================================
-   Stimuler · India Onboarding — localization
+   Stimuler · Activation (Mexico) — localization
    Base copy: "Old flow" column of the content sheet.
-   Localized copies are ROMANIZED (Latin script, WhatsApp-style),
+   INDIAN languages are ROMANIZED (Latin script, WhatsApp-style),
    never native script — per product decision 2026-08-11.
+   SPANISH is NOT romanized: it is already Latin script, so it keeps
+   real accents and ¿/¡. Neutral Mexican register (tú, never vos).
+   CTAs are never localized in any language.
    ⚠ Machine-drafted translations: needs native-speaker review.
    ============================================================ */
 
@@ -30,13 +33,13 @@ const STR = {
     gift_tap: "Tap to open the box",
     welcome_offer: "WELCOME OFFER",
     limited_time: "Limited Time<br><em>50%</em> Offer Today",
-    social_proof: "What 30Lakh+ Indian users say!",
+    social_proof: "What 3 Million+ users in Mexico say!",
     one_time_offer: "ONE TIME WELCOME 50% OFFER",
-    per_month_note: "Just ₹58 per month paid for a whole year",
+    per_month_note: "Just MX$58 per month paid for a whole year",
     testimonials: [
-      { name:'Ankit Verma',  handle:'@ankitv',       body:'Thanks for sharing.. downloaded it right away and got totally hooked. Turns out there’s still a lot for me to improve 😄' },
-      { name:'Priya Singh',  handle:'@priyaspeaks',  body:'HAHAHA you can literally pretend to be busy on a call when you’re actually talking to an AI, and the best part is you PRACTICE ENGLISH!' },
-      { name:'Nikhil Yadav', handle:'@nikhil_y',     body:'If you want to improve your English speaking but have no one to practise with, try this app! Honestly helps a lot, the vocab feedback is so detailed...' },
+      { name:'Diego Herrera',  handle:'@diegohrr',     body:'Thanks for sharing.. downloaded it right away and got totally hooked. Turns out there’s still a lot for me to improve 😄' },
+      { name:'Valeria Ríos',   handle:'@valeriahabla', body:'HAHAHA you can literally pretend to be busy on a call when you’re actually talking to an AI, and the best part is you PRACTICE ENGLISH!' },
+      { name:'Emiliano Cruz',  handle:'@emi_cruz',     body:'If you want to improve your English speaking but have no one to practise with, try this app! Honestly helps a lot, the vocab feedback is so detailed...' },
     ],
     vt_quotes: [
       '“At last I found an app that really helps you grow. Direct to the point instructions for every lesson”',
@@ -122,6 +125,102 @@ const STR = {
     graph_body: "Over the next 8 months, you’ll level up your Pronunciation, Grammar, Fluency & Vocabulary with visible progress every month.",
   },
 
+
+  /* ---------------- SPANISH (Mexico) ----------------
+     NOT romanized — Spanish is already Latin script, so this is real
+     Spanish with accents and ¿/¡. Neutral Mexican register (tú, never vos).
+     CTAs stay English, same rule as every other language. */
+  es: {
+    pw_title: (g) => ({
+      ielts:  '<em>Domina el IELTS</em><br>practicando inglés',
+      career: '<em>Impulsa tu carrera</em><br>practicando inglés',
+      daily:  '<em>Habla con fluidez</em><br>y con confianza',
+      travel: '<em>Viaja por el mundo</em><br>practicando inglés',
+      school: '<em>Destaca en la escuela</em><br>practicando inglés',
+      other:  '<em>Alcanza tus metas</em><br>practicando inglés',
+    }[g]),
+    gift_title: "DESBLOQUEASTE<br>UNA<br>OFERTA",
+    welcome_offer: "OFERTA DE BIENVENIDA",
+    limited_time: "Solo por hoy<br>oferta del <em>50%</em>",
+    social_proof: "¡Mira lo que dicen nuestros usuarios en México!",
+    one_time_offer: "OFERTA ÚNICA DE BIENVENIDA 50%",
+    per_month_note: "Solo MX$58 al mes pagando todo el año",
+    testimonials: [
+      { name:'Diego Herrera',  handle:'@diegohrr',     body:'Gracias por compartirla.. la descargué de inmediato y me enganché por completo. Resulta que todavía me falta muchísimo por mejorar 😄' },
+      { name:'Valeria Ríos',   handle:'@valeriahabla', body:'JAJAJA literalmente puedes fingir que estás ocupada en una llamada cuando en realidad hablas con una IA, ¡y lo mejor es que PRACTICAS INGLÉS!' },
+      { name:'Emiliano Cruz',  handle:'@emi_cruz',     body:'Si quieres mejorar tu inglés hablado pero no tienes con quién practicar, ¡prueba esta app! De verdad ayuda un montón, el feedback de vocabulario es súper detallado...' },
+    ],
+    vt_quotes: [
+      '“Por fin encontré una app que de verdad te hace crecer. Instrucciones claras y al grano en cada lección”',
+      '“Soy introvertido. La app me ayuda muchísimo en lo personal. Ahora practico inglés de forma constante”',
+      '“Esta app me ayudó bastante con mi pronunciación. Sus funciones mejoraron mi inglés”',
+      '“¡Excelente app para hablar y conversar! Mejoró mi inglés con práctica efectiva”',
+    ],
+    change_desc: "Aprenderás inglés a través del español.",
+    name_q: "Puedes llamarme Sarah. ¿Cómo te llamas?",
+    ack_name: "¡Qué bonito nombre! ¡Nos vamos a divertir muchísimo practicando inglés juntos!",
+    phone_q: "Para que recibas las lecciones más recientes y consejos personalizados, ¿me compartes tu número de teléfono?",
+    source_thanks: "¡Gracias! ¿Dónde escuchaste de nosotros?",
+    source_noproblem: "¡No hay problema! ¿Dónde escuchaste de nosotros?",
+    glad: "¡Me da mucho gusto conocerte!",
+    goal_q: "Vamos a crear un plan solo para ti, para que alcances tus metas más rápido. Cuéntame, ¿por qué estás aprendiendo inglés?",
+    goal_career: "Impulsar mi carrera",
+    goal_daily: "Conversaciones del día a día",
+    goal_travel: "Viajar",
+    goal_school: "Destacar en la escuela",
+    goal_other: "Otra meta",
+    ack_ielts: "¡Impresionante! He guiado a más de un millón de candidatos en todo el mundo para alcanzar el band score de sus sueños",
+    ack_career: "¡Impresionante! He ayudado a más de un millón de profesionales a impulsar su carrera practicando conversaciones reales",
+    ack_daily: "¡Genial! Vamos a tener pláticas divertidas para que domines la comunicación del día a día",
+    ack_travel: "¡Excelente! Ya sea un viaje de trabajo o vivir en el extranjero, cubriremos todas las situaciones.",
+    ack_school: "¡Perfecto! ¿Sabías que le he enseñado a más de un millón de personas a hablar inglés con fluidez y confianza?",
+    ack_other: "¡Impresionante! Le he enseñado a más de un millón de personas a hablar inglés con fluidez y confianza",
+    testi_lead: "Mira lo que dicen nuestros estudiantes:",
+    testi_follow: "Ellos practicaron a diario y avanzaron muchísimo, ¡y yo los mantuve en el camino!",
+    notif_ask: "Yo también te voy a recordar, para que nunca se te olvide practicar. Solo activa tus notificaciones.",
+    notif_ok: "¡No te preocupes! Te lo pregunto en otra ocasión.",
+    level_q: "¿Cómo describirías tu nivel de inglés actual?",
+    lvl_beg_d: "Sé algunas palabras, pero no logro formar oraciones.",
+    lvl_int_d: "Puedo formar oraciones cortas sobre cosas sencillas.",
+    lvl_adv_d: "Puedo tener conversaciones breves y entender a los demás.",
+    ack_beginner: "¡Perfecto! Aun con unas cuantas palabras ya estás listo para empezar. Te llevaré paso a paso hasta que tengas conversaciones con confianza",
+    ack_intermediate: "¡Excelente! Ya llevas medio camino recorrido. Un poco más de práctica conmigo y lo vas a lograr.",
+    ack_advanced: "¡Excelente! Para ti el cielo es el límite. Vamos por retos más difíciles y nuevas alturas.",
+    read_intro: "¡Ya casi! Como último paso, lee en voz alta el texto de abajo",
+    read_label: "Léelo en voz alta:",
+    toast_title: "¡Muy bien!",
+    toast_sub: "Leíste tu primera frase en inglés",
+    award_msg: "¡Excelente! Ahora es momento de descubrir por qué Google nos dio el premio a la Mejor App de IA 2023.",
+    report_q: "¿Quieres saber cómo lo hiciste? ¡Toca para ver tu resultado!",
+    select_option: "Elige una opción",
+    lbl_great: "¡Genial!",
+    lbl_coolname: "¡Qué nombre!",
+    lbl_plan: "¡Vamos a armar tu plan!",
+    lbl_impressive: (g) => `“${g}” - ¡Impresionante!`,
+    lbl_know_you: "¡Vamos a conocerte!",
+    lbl_last_step: "Solo un último paso",
+    hs_say1: "Escuché cómo leíste. Aquí es donde estás ahora.",
+    hs_say2: (lv) => `Tú te ubicaste en ${lv}. Bajo presión quedaste un poco por debajo. Esa diferencia es todo el juego.`,
+    hs_say3: (t) => `Y aquí es a donde te vamos a llevar. ${t}, en los próximos 8 meses.`,
+    hs_title: "Tu<br>nivel de<br>inglés",
+    hs_take: (t) => `Vamos a<br>llevarte hasta<br><em>${t}</em>`,
+    fix_title: "Primero vamos a corregir<br>tu <em>pronunciación</em>.",
+    fix_sub: "Hay dos palabras de tu lectura en las que hay que trabajar.",
+    prac_state: "Practiquemos esta palabra",
+    prac_clear: "Di la palabra con claridad…",
+    prac_nice: "Muy bien. Se escuchó clarísimo.",
+    teach: "<b>Lee la palabra en voz alta</b>",
+    graph_title: "En los próximos 8 meses<br>vamos a llevarte a <span class=\"lav\">“Advanced”</span>",
+    graph_body: "Durante los próximos 8 meses tu Pronunciación, Gramática, Fluidez y Vocabulario van a subir de nivel, con avances visibles cada mes.",
+  },
+
+  /* ---------------- INDONESIAN (option only) ----------------
+     Selectable on the native-language step, but there is no full copy
+     block yet — T() falls back to English key by key, so choosing it
+     runs the flow in English. Only the app-language card is localized. */
+  id: {
+    change_desc: "Kamu akan belajar bahasa Inggris lewat bahasa Indonesia.",
+  },
   /* ---------------- HINDI (romanized) ---------------- */
   hi: {
     pw_title: (g) => ({
@@ -135,9 +234,9 @@ const STR = {
     gift_title: "AAPNE EK<br>OFFER<br>UNLOCK KIYA",
     welcome_offer: "WELCOME OFFER",
     limited_time: "Limited Time<br>aaj <em>50%</em> ka offer",
-    social_proof: "30 Lakh+ Indian users kya kehte hain!",
+    social_proof: "3 Million+ users kya kehte hain!",
     one_time_offer: "ONE TIME WELCOME 50% OFFER",
-    per_month_note: "Sirf ₹58 mahina, poore saal ke liye",
+    per_month_note: "Sirf MX$58 mahina, poore saal ke liye",
     testimonials: [
       { name:'Ankit Verma',  handle:'@ankitv',       body:'Thanks for sharing.. turant download kiya aur seedha “lat” lag gayi, pata chala abhi bahut kuch improve karna hai 😄' },
       { name:'Priya Singh',  handle:'@priyaspeaks',  body:'HAHAHA isse aap busy hone ka natak kar sakte ho call pe, jabki baat AI se ho rahi hoti hai — aur sabse badi baat, ENGLISH PRACTICE ho jaati hai!' },
@@ -220,9 +319,9 @@ const STR = {
     gift_title: "TUMHI EK<br>OFFER<br>UNLOCK KELA",
     welcome_offer: "WELCOME OFFER",
     limited_time: "Limited Time<br>aaj <em>50%</em> offer",
-    social_proof: "30 Lakh+ Indian users kay mhantat!",
+    social_proof: "3 Million+ users kay mhantat!",
     one_time_offer: "ONE TIME WELCOME 50% OFFER",
-    per_month_note: "Fakt ₹58 mahina, purna varshasathi",
+    per_month_note: "Fakt MX$58 mahina, purna varshasathi",
     testimonials: [
       { name:'Sanket Kulkarni', handle:'@sanketk',   body:'Thanks for sharing.. lagech download kela ani vyasan lagla, kalala ki ajun khup improve karaycha aahe 😄' },
       { name:'Snehal Joshi',    handle:'@snehalj',   body:'HAHAHA yane tumhi call var busy asalyacha natak karu shakta, ani kharach AI shi bolat asta — ani mukhya mhanje ENGLISH PRACTICE hote!' },
@@ -305,9 +404,9 @@ const STR = {
     gift_title: "NEENGA ORU<br>OFFER<br>UNLOCK PANNITEENGA",
     welcome_offer: "WELCOME OFFER",
     limited_time: "Limited Time<br>indhikku <em>50%</em> offer",
-    social_proof: "30 Lakh+ Indian users enna solranga!",
+    social_proof: "3 Million+ users enna solranga!",
     one_time_offer: "ONE TIME WELCOME 50% OFFER",
-    per_month_note: "Maasam ₹58 dhaan, varusham muzhusukkum",
+    per_month_note: "Maasam MX$58 dhaan, varusham muzhusukkum",
     testimonials: [
       { name:'Karthik Raja',  handle:'@karthikr',      body:'Thanks for sharing.. udane download panniten, apparam “addiction” aagiduchu. Innum niraya improve panna irukku nu puriyuthu 😄' },
       { name:'Divya Ramesh',  handle:'@divya_speaks',  body:'HAHAHA idhula busy ah call la irukra maadhiri nadikkalaam, aana actual la AI kitta dhaan pesreenga — mukkiyama ENGLISH PRACTICE aagum!' },
@@ -390,9 +489,9 @@ const STR = {
     gift_title: "MEERU OKA<br>OFFER<br>UNLOCK CHESARU",
     welcome_offer: "WELCOME OFFER",
     limited_time: "Limited Time<br>ee roju <em>50%</em> offer",
-    social_proof: "30 Lakh+ Indian users emi antunnaro!",
+    social_proof: "3 Million+ users emi antunnaro!",
     one_time_offer: "ONE TIME WELCOME 50% OFFER",
-    per_month_note: "Nelaki ₹58 matrame, samvatsaram antha",
+    per_month_note: "Nelaki MX$58 matrame, samvatsaram antha",
     testimonials: [
       { name:'Sai Teja',      handle:'@saiteja',   body:'Thanks for sharing.. venatane download chesanu, addiction ayipoyindi. Inka chala improve cheyali ani ardham ayindi 😄' },
       { name:'Harika Reddy',  handle:'@harikar',   body:'HAHAHA deenitho call lo busy ga unnattu natinchochu, nijaniki AI tho matladutunnam — mukhyam ga ENGLISH PRACTICE avutundi!' },
@@ -475,9 +574,9 @@ const STR = {
     gift_title: "NEEVU ONDU<br>OFFER<br>UNLOCK MAADIDDIRA",
     welcome_offer: "WELCOME OFFER",
     limited_time: "Limited Time<br>indu <em>50%</em> offer",
-    social_proof: "30 Lakh+ Indian users enu heltare!",
+    social_proof: "3 Million+ users enu heltare!",
     one_time_offer: "ONE TIME WELCOME 50% OFFER",
-    per_month_note: "Tingaligge ₹58 maatra, purti varshakke",
+    per_month_note: "Tingaligge MX$58 maatra, purti varshakke",
     testimonials: [
       { name:'Manoj Gowda',  handle:'@manojg',    body:'Thanks for sharing.. takshana download maadide, aamele chataka hattitu. Innu tumba improve maadbeku anta gottaytu 😄' },
       { name:'Ashwini Rao',  handle:'@ashwinir',  body:'HAHAHA idarinda call alli busy iddante nataka maadbahudu, nijavaagi AI jothe maatadtha irtivi — mukhyavaagi ENGLISH PRACTICE aagutte!' },
@@ -560,9 +659,9 @@ const STR = {
     gift_title: "NINGAL ORU<br>OFFER<br>UNLOCK CHEYTHU",
     welcome_offer: "WELCOME OFFER",
     limited_time: "Limited Time<br>innu <em>50%</em> offer",
-    social_proof: "30 Lakh+ Indian users parayunnathu!",
+    social_proof: "3 Million+ users parayunnathu!",
     one_time_offer: "ONE TIME WELCOME 50% OFFER",
-    per_month_note: "Maasam ₹58 maathram, oru varsham muzhuvan",
+    per_month_note: "Maasam MX$58 maathram, oru varsham muzhuvan",
     testimonials: [
       { name:'Arjun Nair',   handle:'@arjunnair', body:'Thanks for sharing.. udane download cheythu, pinne adiction aayi. Ini othiri improve cheyyanam ennu manassilayi 😄' },
       { name:'Anjali Menon', handle:'@anjalim',   body:'HAHAHA ithu vechu call il busy aanenna bhaavam nadikkam, sathyathil AI yodu aanu samsaarikkunnathu — ettavum pradhaanam ENGLISH PRACTICE aakum!' },

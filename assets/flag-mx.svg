@@ -1,0 +1,18 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="contents">
+<path id="background" fill-rule="evenodd" clip-rule="evenodd" d="M0 0V18H24V0H0Z" fill="#F7FCFF"/>
+<mask id="mask0_mx" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="18">
+<path id="background_2" fill-rule="evenodd" clip-rule="evenodd" d="M0 0V18H24V0H0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_mx)">
+<path id="left" fill-rule="evenodd" clip-rule="evenodd" d="M0 0V18H8V0H0Z" fill="#006847"/>
+<path id="right" fill-rule="evenodd" clip-rule="evenodd" d="M16 0V18H24V0H16Z" fill="#CE1126"/>
+<g id="mark">
+<path id="wreath" d="M9.85 10.35a2.2 2.2 0 0 0 4.3 0" stroke="#006847" stroke-width="0.75" fill="none" stroke-linecap="round"/>
+<path id="ribbon" d="M9.6 10.5h4.8" stroke="#CE1126" stroke-width="0.6" stroke-linecap="round"/>
+<path id="eagle" fill-rule="evenodd" clip-rule="evenodd" d="M12 5.6c.55 0 1.05.28 1.35.72l1.5-.5-1.05 1.15c.2.35.3.75.3 1.18 0 .35-.07.68-.2.98l1.2.62-1.62.05a2.3 2.3 0 0 1-1.48.9v.85h-.5v-.85a2.3 2.3 0 0 1-1.48-.9l-1.62-.05 1.2-.62a2.4 2.4 0 0 1-.2-.98c0-.43.1-.83.3-1.18L8.65 5.82l1.5.5A1.63 1.63 0 0 1 12 5.6Z" fill="#8C6239"/>
+<path id="snake" d="M10.4 9.3c.55.4 1.2.6 1.6.6s1.05-.2 1.6-.6" stroke="#006847" stroke-width="0.5" fill="none" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+</svg>

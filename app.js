@@ -1,6 +1,6 @@
 /* ============================================================
-   Stimuler · India Onboarding — faithful baseline of the
-   current chat onboarding (Figma "Stimuler V3" 6340:28505).
+   Stimuler · Activation (Mexico) — chat activation flow, forked
+   from the India onboarding (Figma "Stimuler V3" 6340:28505).
    Vanilla JS chat state machine. All voice/mic behaviour mocked.
    ============================================================ */
 
@@ -50,7 +50,7 @@ const DP_STEPS = [
   ['award', 'Award'], ['meter', 'Speech meter'], ['fix', 'Fix pronunciation'],
   ['practice', 'Practice'], ['paywall', 'Graph → Paywall'], ['gift', 'Gift'], ['offer', 'Offer paywall'],
 ];
-const DP_LANGS = [['en','English'],['hi','Hindi'],['mr','Marathi'],['ta','Tamil'],['te','Telugu'],['kn','Kannada'],['ml','Malayalam']];
+const DP_LANGS = [['en','English'],['es','Spanish'],['id','Indonesian'],['hi','Hindi'],['mr','Marathi'],['ta','Tamil'],['te','Telugu'],['kn','Kannada'],['ml','Malayalam']];
 const DP_LVLS  = [['beginner','Beginner'],['intermediate','Intermediate'],['advanced','Advanced']];
 const DP_VARS  = [['a','A · Text'],['b','B · Video']];
 
@@ -1057,24 +1057,28 @@ async function flow(){
   await sticker('scooter');
   await wait(400);
 
-  /* 2 · native language — Indian languages, Hindi on top */
+  /* 2 · native language — Spanish on top for the LatAm flow, then
+     Indonesian, then the Indian languages. `flag` is the asset the
+     app-language card shows for that tongue. */
   reach('language');
   await sarah(T('lang_q'));
   setProgress(0, '0% completed');
   const LANGS = {
-    hi: { label: 'Hindi' },
-    mr: { label: 'Marathi' },
-    ta: { label: 'Tamil' },
-    te: { label: 'Telugu' },
-    kn: { label: 'Kannada' },
-    ml: { label: 'Malayalam' },
+    es: { label: 'Spanish',    flag: 'mx' },
+    id: { label: 'Indonesian', flag: 'id' },
+    hi: { label: 'Hindi',      flag: 'in' },
+    mr: { label: 'Marathi',    flag: 'in' },
+    ta: { label: 'Tamil',      flag: 'in' },
+    te: { label: 'Telugu',     flag: 'in' },
+    kn: { label: 'Kannada',    flag: 'in' },
+    ml: { label: 'Malayalam',  flag: 'in' },
   };
   const lang = await options([
     ...Object.entries(LANGS).map(([value, l]) => ({
-      value, label: l.label, defaultOnSkip: value === 'hi',
+      value, label: l.label, defaultOnSkip: value === 'es',
     })),
     { value: 'more', label: T('other_langs'), icon: '🌎', inert: true },
-  ], { forced: DBG.lang === 'en' ? 'hi' : DBG.lang });
+  ], { forced: DBG.lang === 'en' ? 'es' : DBG.lang });
   const L = LANGS[lang];
   setProgress(2, T('lbl_great'));
   await wait(300);
@@ -1084,8 +1088,8 @@ async function flow(){
   reach('applang');
   await sarah(T('applang_q'));
   const applang = await options([
-    { value: 'native',  label: T('change_to', L.label), icon: flag('in'),
-      desc: STR[lang].change_desc },
+    { value: 'native',  label: T('change_to', L.label), icon: flag(L.flag),
+      desc: (STR[lang] || STR.en).change_desc },
     { value: 'english', label: T('keep_en'), icon: '🇬🇧',
       desc: T('keep_desc'), defaultOnSkip: true },
   ], { wide: true, link: T('other_lang_link'), forced: DBG.lang === 'en' ? 'english' : 'native' });
@@ -1105,7 +1109,7 @@ async function flow(){
   await sarah(T('ack_name'));
   setProgress(23, '23% completed');
   await sarah(T('phone_q'));
-  const phone = await phoneInput('in', '+91');
+  const phone = await phoneInput('mx', '+52');
 
   /* 6 · attribution — thanks vs no-problem depends on whether they shared it */
   reach('source');

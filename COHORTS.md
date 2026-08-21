@@ -115,7 +115,7 @@ don't have it yet → **C2**, already have it → **C3**, *are* it → **C4**.
 | C5 | Belonging | Nobody — and that is the problem | Fillers, dead air, time to first word | "What do you like doing in your free time?" |
 | C6 | Travel | A stranger with thirty seconds | Were you understood | "Where are you from?" |
 | C7 | School | A teacher and a room of classmates | Were you followed | "Tell me about something you're studying." |
-| C8 | Household | An institution with a queue behind you | Did you get what you came for | "Is there anything you'd like to ask me?" |
+| C8 | Household | A professional who holds something the family needs | Did you say what you came to say | "Tell me how things are going at home." |
 
 The judge is the load-bearing idea: it determines the question that makes sense,
 what "good" means, what number we show, and what the paywall sells.
@@ -171,50 +171,60 @@ sentences where the failure mode is one.
 ## C8 — Household
 
 **Goal:** Personal growth · **Occupation:** homemaker
-**Judge:** an institution with a queue behind you — a teacher, a receptionist, a clerk
-**Scoreboard:** did you get what you came for
+**Judge:** a teacher, a nurse, a clerk — a professional who holds something the family needs
+**Scoreboard:** did you say what you came to say
 
 ### The scenario
 
-This person runs the household and deals with institutions on the family's
-behalf: the school office, the clinic, the bank, the parent-teacher meeting.
+This person runs the household and speaks for the family at institutions: the
+parent-teacher meeting, the school office, the clinic, the bank.
 
-The failure is specific and costly. Asked whether they have any questions, they
-say "no, it's fine" — and leave without the thing they came for. Often the
-workaround is having a child translate, which is exactly the dependency they
-want to end.
+The failure is specific and costly. Asked how things are, they say "fine, good"
+and stop. The meeting ends, nothing is said, nothing is asked, and next time a
+child comes along to translate — which is exactly the dependency they want to
+end.
 
 Unlike C5 there *is* a judge, and unlike C6 the stakes are someone else's
 welfare rather than their own convenience.
 
 ### The question
 
-> **"Is there anything you'd like to ask me?"**
+> **"Tell me how things are going at home."**
 
 | step | the learner says |
 |---|---|
-| Say that you do | Yes, actually, I do have one question. |
-| Say what it is about | It is about the homework she gets. |
-| Give the detail | She spends about two hours on it every night. |
-| Ask it directly | Is that normal for her age? |
+| Say how it is | Things are going well at home, mostly. |
+| Give a detail | My daughter has started reading on her own. |
+| Name the worry | But she goes very quiet when there is homework. |
+| Turn it into a question | Is she like that in class as well? |
 
-**Drilled:** *question* · *hours*
+**Drilled:** *quiet* · *homework*
 
 ### Occupation swaps
 
-Not every household runs a child. Same cohort, same scoring, one line different:
+Not every household runs a child. Same cohort, same scoring, same shape:
 
-| Situation | Lines 2–4 |
+| Situation | Setting |
 |---|---|
-| Has children | *(default — about the child's schooling)* |
-| No children | "It is about the appointment I booked… I have been waiting about three weeks… Is there anything sooner?" |
+| Has children | *(default — a teacher at a parent-teacher meeting)* |
+| No children | A nurse or a housing clerk: "Things are fine, mostly… my mother has been having trouble sleeping… she has been waiting about three weeks… is there anything sooner?" |
 
 ### Why this question
 
-It is the exact moment of failure rather than a description of it, and it is
-asked at every institution — school, clinic, bank, office. It is answerable
-cold, it requires no role to adopt, and the model answer does the one thing the
-user does not do: it asks.
+It is answerable cold from the user's own life. Nothing to invent, no role to
+adopt, no reason-for-being-there to construct before speaking — the same
+property that makes the School question work, and the reason the earlier draft
+("Is there anything you'd like to ask me?") was wrong. That one demanded the
+user build a scenario first, and it put them in a reactive position.
+
+This is also the real opening move at a parent-teacher meeting, a health visit
+or a case review, so it is a question their life genuinely asks.
+
+**How it stays distinct from C5.** Both are personal and home-shaped, but the
+fourth step splits them. C5 turns it back socially — *"What about you?"* — and
+scores confidence signals with no judge. C8 turns it into a request for
+information — *"Is she like that in class as well?"* — and scores whether the
+user got what they came for. Same warmth, different exit.
 
 ---
 

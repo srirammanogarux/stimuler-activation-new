@@ -1,28 +1,12 @@
-# Activation subgoals — jobs to be done
+# Subgoals — jobs to be done, per cohort
 
-> ⚠️ **Superseded pending cohort convergence.** This draft was built goal-first.
-> The model has since moved to **cohort-first** (`goal × occupation`), goals have
-> been renamed, and Exam has become a branch rather than a leaf. Roughly half the
-> jobs below are affected — `meetings`, `presentation` and `fastspeech` are ruled
-> out of activation scope, and School yields no cohort of its own. Kept for the
-> family analysis and the four-part test, both of which still hold. Rewrite comes
-> after the cohorts are settled.
+**Step 2 of three.** Built on the eight cohorts in [COHORTS.md](COHORTS.md).
 
-Draft for review. **Nothing here is in the build yet.**
+Nothing here is in the build yet.
 
-One question after the goal. The user picks a single situation they want to gain
-confidence in, and that pick is what the activation experience gets built around.
-
-Starting point: the `GOALS` block in
-[srirammanogarux/usa-onboarding](https://github.com/srirammanogarux/usa-onboarding)
-· `content.js:78`, where it is called JTBD.
-
-| | |
-|---|---|
-| Goals | 6 |
-| Jobs to be done | 30 |
-| Content families | 9 |
-| Options per goal | 5 |
+Each cohort gets **four**. Four scans in a chat bubble on a phone; five starts to
+read like a form. Order matters — the first option takes a disproportionate
+share of picks, so each list opens with the most-wanted job for that cohort.
 
 ---
 
@@ -37,159 +21,180 @@ category, not a job.
    badly. Recognition is what makes the pick feel personal.
 3. **One experience fits it.** You can build a single focused practice around it.
    If it needs three, it is still a goal.
-4. **It beats its neighbours.** Distinct enough that picking it rules the others
-   out. Overlapping options make the choice feel arbitrary.
+4. **It stays inside its cohort's judge.** Every job below is a variation on one
+   judge's world. A job that implies a different judge belongs to a different
+   cohort.
+
+Rule 4 is new, and it is what changed. In the goal-first draft, subgoals were
+grouped into nine "content families" — an invented layer that existed only
+because goals were too broad to build against. The cohort now does that work.
+**Families are gone. The cohort is the build unit.**
 
 ---
 
-## The six goals
+## C1 — Exam
 
-Order matters — the first option takes a disproportionate share of picks, so each
-list opens with the most-wanted situation for that goal. **Bold** families are
-ones the USA set does not have.
+Judge: an examiner with a rubric and a clock.
 
-### IELTS — `ielts`
+| # | Job to be done |
+|---|---|
+| 1 | Get through the long turn without drying up |
+| 2 | Answer the follow-ups without one-word replies |
+| 3 | Cut the pauses and fillers that cost marks |
+| 4 | Sound natural instead of memorised |
 
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Get through the two-minute long turn | `exam` |
-| 2 | Hold my own in the Part 3 discussion | `exam` |
-| 3 | Stop freezing in the middle of an answer | **`fluency`** |
-| 4 | Keep up with fast native audio | `fastspeech` |
-| 5 | Sound natural instead of rehearsed | **`fluency`** |
+### How this varies by exam
 
-### Improve my career — `career`
+The list above is the IELTS default. The judge never changes, so the cohort
+holds — but the format does, and job 1 is format-specific.
 
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Ace a job interview | `interview` |
-| 2 | Speak up in meetings | `meetings` |
-| 3 | Present to a room without freezing | **`presentation`** |
-| 4 | Network without going blank | `networking` |
-| 5 | Talk to my manager with confidence | `interview` |
+| Exam | Job 1 becomes |
+|---|---|
+| IELTS Academic | Get through the long turn without drying up |
+| IELTS General | Talk about everyday topics without running short |
+| TOEFL | Answer in 45 seconds with no time to plan |
+| PTE | Repeat and retell without losing the thread |
+| TOEIC | Read aloud and describe a photo without stumbling |
 
-### Everyday conversations — `daily`
-
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Make small talk feel natural | `networking` |
-| 2 | Meet new people and make friends | `networking` |
-| 3 | Handle appointments and offices on my own | `services` |
-| 4 | Keep up when people talk fast | `fastspeech` |
-| 5 | Talk easily with my partner's family | `family` |
-
-### Travel — `travel`
-
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Get through airports and hotels | `services` |
-| 2 | Order and shop with confidence | `services` |
-| 3 | Sort out a mix-up when plans break | `services` |
-| 4 | Make friends on the road | `networking` |
-| 5 | Understand fast local English | `fastspeech` |
-
-### Excel at my school — `school`
-
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Pass my speaking exam | `exam` |
-| 2 | Speak up in class discussions | `meetings` |
-| 3 | Present my project to the class | **`presentation`** |
-| 4 | Keep up with fast lectures | `fastspeech` |
-| 5 | Make friends on campus | `networking` |
-
-### Any other goal — `other`
-
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Speak without overthinking every word | **`fluency`** |
-| 2 | Start a conversation with anyone | `networking` |
-| 3 | Understand native speakers at full speed | `fastspeech` |
-| 4 | Stop translating in my head first | **`fluency`** |
-| 5 | Be ready when the opportunity comes | `interview` |
+Jobs 2–4 hold across all five. Academic and General differ in the *topics* they
+have to sustain — abstract and discursive versus everyday and concrete — which
+is a copy difference, not a task difference.
 
 ---
 
-## Where the build weight lands
+## C2 — Interview
 
-Thirty options is thirty only on the screen. Underneath they resolve to nine
-families, and a family is what you actually build once.
+Judge: a hiring manager deciding in real time.
 
-| Family | Jobs | Fed by |
-|---|---:|---|
-| `networking` | 6 | career · daily ×2 · travel · school · other |
-| `fastspeech` | 5 | ielts · daily · travel · school · other |
-| `services` | 4 | daily · travel ×3 |
-| `fluency` | 4 | ielts ×2 · other ×2 |
-| `exam` | 3 | ielts ×2 · school |
-| `interview` | 3 | career ×2 · other |
-| `meetings` | 2 | career · school |
-| `presentation` | 2 | career · school |
-| `family` | 1 | daily |
+| # | Job to be done |
+|---|---|
+| 1 | Answer "why should we hire you" without hedging |
+| 2 | Explain a gap in my history without apologising |
+| 3 | Talk about what I am good at without shrinking |
+| 4 | Ask my own questions at the end |
 
-Three families — `networking`, `fastspeech` and `services` — absorb half of every
-pick. Build those three properly and the majority of users meet a well-made
-experience on their first run.
-
-`family` sits at one job and is the obvious candidate to merge into `networking`
-or cut.
+Job 2 is the one that earns its place for `career break`, `homemaker` and
+`looking for work` — the three occupations that route here carrying a gap.
 
 ---
 
-## How this differs from the USA set
+## C3 — At Work
 
-The USA JTBD block holds up. These are the deliberate departures.
+Judge: colleagues who already hired you.
 
-**Added**
-
-- **`presentation`** — sustained solo talk to a room. It was in your own
-  workplace example and the USA set has no family for it; a presentation is not
-  a meeting.
-- **`fluency`** — the internal blocker rather than a room. Freezing,
-  overthinking, translating in your head. It breaks rule 1 above by not being a
-  situation, but it is what most learners name first when asked what stops them,
-  so it is here to be argued about rather than quietly dropped.
-
-**Merged**
-
-- `customer` and `pitch` folded into `services` and `interview`. Both existed in
-  the USA file only to serve the work-mode branch, which activation does not have.
-- `smalltalk` renamed `networking` — same family, but the name now covers the
-  work-event case as well as the neighbour case.
-
-**Held back**
-
-- No country variation yet, per your call. The situations are written to travel;
-  if Mexico needs its own cut, that is a pass after this one.
-- No Spanish yet — worth translating once the English is settled rather than twice.
+| # | Job to be done |
+|---|---|
+| 1 | Give my update without rambling |
+| 2 | Explain my work to someone outside my team |
+| 3 | Disagree without sounding rude |
+| 4 | Say I need more time, or help |
 
 ---
 
-## Open questions
+## C4 — Own Boss
 
-1. **Does the family drive a different experience, or only different copy?**
-   Nine families means nine practice experiences to build. If the subgoal only
-   personalises Sarah's wording and the practice stays the same, this is a small
-   build. If each family gets its own activation moment, it is the whole project.
-2. **Five options, or fewer?** Five is a lot to read in a chat bubble on a phone.
-   Four scans faster and pushes the fifth into a catch-all. I would cut to four
-   per goal if you want the step to feel quick.
-3. **Does IELTS keep its own shape?** IELTS users arrive with an exam date and a
-   target band. Its subgoals are exam mechanics rather than life situations,
-   which may argue for a different treatment than the other five goals.
-4. **Should the pick be visible later in the flow?** The strongest version calls
-   back to it — the speech meter, the graph and the paywall headline all naming
-   the situation the user chose. That is a bigger change than the subgoal step
-   itself.
+Judge: a customer deciding whether to hire you.
+
+| # | Job to be done |
+|---|---|
+| 1 | Say what my business does in one breath |
+| 2 | Say my price without softening it |
+| 3 | Answer "why are you more expensive?" |
+| 4 | Follow up without sounding desperate |
+
+`freelancer` reads "my work" for "my business" throughout — the same swap the
+activation question already makes.
 
 ---
 
-## Where it goes in the flow
+## C5 — Belonging
 
-Between the goal step and the testimonials, which are unchanged.
+Judge: nobody, and that is the problem.
 
-```
-… → goal → SUBGOAL (new) → testimonials → notifications → level → reading test → …
-```
+| # | Job to be done |
+|---|---|
+| 1 | Say more than three words and stop |
+| 2 | Keep it going past the first exchange |
+| 3 | Join a group that is already talking |
+| 4 | Talk to someone new without rehearsing first |
 
-The reading test is untouched and stays that way until we get to it.
+These are the only jobs in the set with no external standard, which is why the
+cohort scores confidence signals rather than correctness.
+
+---
+
+## C6 — Travel
+
+Judge: a stranger with thirty seconds.
+
+| # | Job to be done |
+|---|---|
+| 1 | Be understood the first time |
+| 2 | Ask a stranger for help without freezing |
+| 3 | Sort it out when something goes wrong |
+| 4 | Keep chatting after the practical part is done |
+
+---
+
+## C7 — School
+
+Judge: a teacher and a room of classmates.
+
+| # | Job to be done |
+|---|---|
+| 1 | Answer when the teacher calls on me |
+| 2 | Explain my work to the class |
+| 3 | Ask a question without feeling stupid |
+| 4 | Hold my part in a group project |
+
+Job 3 is the quiet one and probably the most common. Students do not ask because
+asking exposes them twice — once for not knowing, once for how they sound.
+
+---
+
+## C8 — Household
+
+Judge: an institution with a queue behind you.
+
+| # | Job to be done |
+|---|---|
+| 1 | Speak up at a parent-teacher meeting |
+| 2 | Handle the school office on my own |
+| 3 | Get through a clinic or doctor visit |
+| 4 | Sort out a bill, a bank, or an office problem |
+
+Job 1 is the anchor. The rest generalise it to the other institutions the same
+person deals with, so the cohort does not collapse into "school" alone.
+
+---
+
+## What is deliberately absent
+
+**Comprehend** — "understand fast speakers", "keep up with fast lectures". It
+appeared under every goal in the old label set and is one of the most commonly
+named problems learners have. It is left out of all eight lists because it is a
+*listening* problem currently served by a speaking task, and it needs no
+microphone. Per the source doc it is a natural fallback for anyone who abandons
+at the mic — which makes it a feature, not a subgoal.
+
+**Interject** — "speak up in meetings", "answer in class". No longer homeless:
+it is C3 job 1 and C7 job 1. The activation event does not test it, since
+breaking into a conversation needs audio to break into, but the user can still
+name it as what they want.
+
+---
+
+## Counts
+
+| | |
+|---|---|
+| Cohorts | 8 |
+| Jobs to be done | 32 |
+| Activation questions | 8, plus 4 exam format variants |
+| Occupation swap lines | ~8 (C2, C4, C8) |
+
+---
+
+## Still to come
+
+3. The activation event per cohort — what happens after the pick.

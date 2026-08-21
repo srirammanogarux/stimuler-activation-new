@@ -6,54 +6,46 @@ Nothing here is in the build yet.
 
 ---
 
-## The budget is pairs, not jobs
+## The rule: a job is a scene, not a quality
 
-Taken from how v1 converged — see `onboarding-form/docs/BRANCHING.md`.
+Every job must **hand you a prompt**. If you cannot write the opening line
+someone says, it is not a job — it is a scoring dimension, and it belongs on the
+report rather than in the list.
 
-v1 shows **47 distinct JTBD labels**. It does not author 47 variants. Each label
-carries a `fam`, an internal **family** key the user never sees, and the copy is
-keyed on `goal|family` — because the same family means different things under
-different goals. That gives 20 reachable pairs, and only **12 need bespoke copy**.
-The rest fall through:
+| | |
+|---|---|
+| ✅ | "Answer *why should we hire you*" — the line exists, the task writes itself |
+| ❌ | "Cut the pauses and fillers that cost marks" — no moment, nobody speaks, nothing to build |
 
-```
-PLAN_GF['goal|family']  →  the family map  →  the 'smalltalk' fallback
-```
+This is why every job below carries its opening line. The third column is not
+documentation; it is the activation task in embryo.
 
-So the count that costs anything is **pairs**, not options. The label is free and
-should stay concrete. The pair is expensive and should stay capped.
+**Narrow beats broad.** A job is *one moment inside* a situation, not the whole
+situation. "Handle a job interview" is a cohort. "Answer *tell me about
+yourself*" is a job.
 
-**Applied here:** the cohort already carries what `goal|mode` carried in v1, so
-the key is `cohort|family`. **32 jobs resolve to 11 pairs.** That is the number
-to hold, and it is already inside the v1 budget.
+**Scoring dimensions are not jobs.** Freezing, fillers, dead air and rambling are
+real problems and they are what we *measure*. They are never what the user picks.
 
 ---
 
-## What makes a subgoal work
+## What changed
 
-1. **It is a situation.** A moment with a room, a person and a stake — not a
-   skill. "Speak up in meetings", never "improve fluency".
-2. **The user has lived it.** They should recognise a specific time it went
-   badly. Recognition is what makes the pick feel personal.
-3. **It stays inside its cohort's judge.** Every job below is a variation on one
-   judge's world. A job implying a different judge belongs to a different cohort.
-4. **It carries a family.** The label is written for a human; the family is
-   written for the copy system. Never show the family.
+Applying the rule to the previous draft: C1 failed 2 of 4, C5 and C6 failed all
+4, C3 and C4 failed 1 each. Only C2 passed clean, which is exactly why it read as
+the straightforward one.
 
-Each cohort gets **four**. Four scans in a chat bubble; five reads like a form.
-Order matters — the first option takes a disproportionate share of picks.
+C1's `fluency` jobs are gone — they were the scoring dimension in disguise.
 
 ---
 
 ## The families
 
-Eight, adapted from v1's nine. `customer` folds into `pitch` and `services`;
-`fastspeech` is dropped as out of activation scope; `fluency` is new.
+Internal copy keys. Never shown to the user.
 
 | Family | What it is |
 |---|---|
 | `exam` | Timed, scored, against a rubric |
-| `fluency` | The internal blocker — freezing, fillers, dead air |
 | `interview` | Evaluated by one person who is deciding about you |
 | `meetings` | Speaking into a group that already knows you |
 | `pitch` | Selling your own work, price or worth |
@@ -64,151 +56,221 @@ Eight, adapted from v1's nine. `customer` folds into `pitch` and `services`;
 ---
 
 ## C1 — Exam
+
 Judge: an examiner with a rubric and a clock.
 
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Get through the long turn without drying up | `exam` |
-| 2 | Answer the follow-ups without one-word replies | `exam` |
-| 3 | Cut the pauses and fillers that cost marks | `fluency` |
-| 4 | Sound natural instead of memorised | `fluency` |
+**The jobs are the parts of the test.** That is the narrowing — and it is the
+real reason the list differs per exam, since the parts genuinely differ.
 
-**How this varies by exam.** The judge never changes, so the cohort holds. Job 1
-is format-specific:
+### IELTS · Academic and General
 
-| Exam | Job 1 becomes |
+Speaking is identical for both. Academic and General differ in the *topics* they
+have to sustain — abstract and discursive versus everyday and concrete — which
+is copy inside one pair, not a new list.
+
+| # | Job to be done | The line that opens it | Family |
+|---|---|---|---|
+| 1 | Answer the warm-up questions about me | "Let's talk about where you live. Do you live in a house or a flat?" | `exam` |
+| 2 | Talk for two minutes from a card | "Describe a place you often visit. You have one minute to prepare." | `exam` |
+| 3 | Discuss the bigger questions | "Why do you think people need quiet places?" | `exam` |
+
+### The other exams
+
+Same judge, so the cohort holds. The parts are different, and so is the task
+shape — PTE and TOEIC are mechanical rather than conversational, which the
+activation event has to account for.
+
+| Exam | Jobs |
 |---|---|
-| IELTS Academic | Get through the long turn without drying up |
-| IELTS General | Talk about everyday topics without running short |
-| TOEFL | Answer in 45 seconds with no time to plan |
-| PTE | Repeat and retell without losing the thread |
-| TOEIC | Read aloud and describe a photo without stumbling |
+| TOEFL | Give my opinion in 45 seconds · Retell what I read and heard · Summarise a lecture |
+| PTE | Read a sentence aloud · Repeat what I hear · Describe an image · Retell a lecture |
+| TOEIC | Read a text aloud · Describe a photo · Answer the quick questions · Give my opinion |
 
-Jobs 2–4 hold across all five. Academic and General differ in the *topics* they
-sustain — abstract versus everyday — which is a copy difference inside one pair,
-not a new pair.
+> **Task shape warning.** IELTS, TOEFL and TOEIC part 3 are "you are asked, you
+> answer". PTE's repeat-and-read tasks are not — there is no question and no
+> opinion. Those need a different activation shape, or C1 ships IELTS-first and
+> the rest follow.
+
+---
 
 ## C2 — Interview
-Judge: a hiring manager deciding in real time.
 
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Answer "why should we hire you" without hedging | `interview` |
-| 2 | Explain a gap in my history without apologising | `interview` |
-| 3 | Talk about what I am good at without shrinking | `interview` |
-| 4 | Ask my own questions at the end | `interview` |
+Judge: a hiring manager deciding in real time. The model cohort — every job is
+already a question someone asks out loud.
 
-Job 2 earns its place for `career break`, `homemaker` and `looking for work` —
+| # | Job to be done | The line that opens it | Family |
+|---|---|---|---|
+| 1 | Answer "tell me about yourself" | "So — tell me about yourself." | `interview` |
+| 2 | Answer "why should we hire you" | "Why should we hire you?" | `interview` |
+| 3 | Explain the gap in my CV | "There's a two-year gap here. What were you doing?" | `interview` |
+| 4 | Answer "what's your weakness" | "What would you say is your biggest weakness?" | `interview` |
+
+Job 3 earns its place for `career break`, `homemaker` and `looking for work` —
 the three occupations that route here carrying a gap.
 
+---
+
 ## C3 — At Work
+
 Judge: colleagues who already hired you.
 
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Give my update without rambling | `meetings` |
-| 2 | Explain my work to someone outside my team | `meetings` |
-| 3 | Disagree without sounding rude | `meetings` |
-| 4 | Say I need more time, or help | `meetings` |
+| # | Job to be done | The line that opens it | Family |
+|---|---|---|---|
+| 1 | Give my update in the standup | "What are you working on right now?" | `meetings` |
+| 2 | Explain what my team does | "What does your team actually do?" | `meetings` |
+| 3 | Say a deadline will slip | "Will it be ready by Friday?" | `meetings` |
+| 4 | Say I disagree with the plan | "We're going with option A. Any thoughts?" | `meetings` |
+
+---
 
 ## C4 — Own Boss
+
 Judge: a customer deciding whether to hire you.
 
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Say what my business does in one breath | `pitch` |
-| 2 | Say my price without softening it | `pitch` |
-| 3 | Answer "why are you more expensive?" | `pitch` |
-| 4 | Follow up without sounding desperate | `pitch` |
+| # | Job to be done | The line that opens it | Family |
+|---|---|---|---|
+| 1 | Answer "tell me about your business" | "So, tell me about your business." | `pitch` |
+| 2 | Say my price out loud | "How much do you charge?" | `pitch` |
+| 3 | Answer "why are you more expensive" | "Your quote is higher than the others. Why?" | `pitch` |
+| 4 | Handle "this isn't what I asked for" | "Honestly, this isn't what I asked for." | `pitch` |
 
 `freelancer` reads "my work" for "my business" throughout.
 
+---
+
 ## C5 — Belonging
+
 Judge: nobody, and that is the problem.
 
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Say more than three words and stop | `smalltalk` |
-| 2 | Keep it going past the first exchange | `smalltalk` |
-| 3 | Join a group that is already talking | `smalltalk` |
-| 4 | Talk to someone new without rehearsing first | `smalltalk` |
+Previously the weakest list — all four jobs described *how* the user speaks
+rather than *when*. These are the four questions people actually freeze on.
+
+| # | Job to be done | The line that opens it | Family |
+|---|---|---|---|
+| 1 | Answer "how was your weekend" | "So how was your weekend?" | `smalltalk` |
+| 2 | Answer "so, what do you do" | "And what do you do?" | `smalltalk` |
+| 3 | Answer "what do you like doing" | "What do you like doing in your free time?" | `smalltalk` |
+| 4 | Answer "how long have you been here" | "How long have you been here?" | `smalltalk` |
+
+---
 
 ## C6 — Travel
+
 Judge: a stranger with thirty seconds.
 
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Be understood the first time | `services` |
-| 2 | Ask a stranger for help without freezing | `services` |
-| 3 | Sort it out when something goes wrong | `services` |
-| 4 | Keep chatting after the practical part is done | `smalltalk` |
+| # | Job to be done | The line that opens it | Family |
+|---|---|---|---|
+| 1 | Answer "where are you from" | "Where are you from?" | `smalltalk` |
+| 2 | Check in without stumbling | "Do you have a reservation?" | `services` |
+| 3 | Explain what went wrong | "What seems to be the problem?" | `services` |
+| 4 | Answer "how long are you staying" | "And how long are you staying?" | `services` |
+
+---
 
 ## C7 — School
+
 Judge: a teacher and a room of classmates.
 
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Answer when the teacher calls on me | `meetings` |
-| 2 | Explain my work to the class | `meetings` |
-| 3 | Ask a question without feeling stupid | `meetings` |
-| 4 | Hold my part in a group project | `meetings` |
+| # | Job to be done | The line that opens it | Family |
+|---|---|---|---|
+| 1 | Answer when the teacher calls on me | "And what do you think about that?" | `meetings` |
+| 2 | Tell the class about my project | "Come up and tell us about your project." | `meetings` |
+| 3 | Answer "what are you studying" | "Tell me about something you're studying." | `meetings` |
+| 4 | Explain my part in a group project | "So which part did you do?" | `meetings` |
 
-Job 3 is the quiet one and probably the most common. Students do not ask because
-asking exposes them twice — once for not knowing, once for how they sound.
+---
 
 ## C8 — Household
+
 Judge: a professional who holds something the family needs.
 
-| # | Job to be done | Family |
-|---|---|---|
-| 1 | Speak up at a parent-teacher meeting | `family` |
-| 2 | Handle the school office on my own | `services` |
-| 3 | Get through a clinic or doctor visit | `services` |
-| 4 | Sort out a bill, a bank, or an office problem | `services` |
+| # | Job to be done | The line that opens it | Family |
+|---|---|---|---|
+| 1 | Speak up at the parent-teacher meeting | "Tell me how things are going at home." | `family` |
+| 2 | Get through the doctor's appointment | "What seems to be the problem?" | `services` |
+| 3 | Handle the school office | "Hello — how can I help you?" | `services` |
+| 4 | Sort out a bill or a bank problem | "What's the issue with the account?" | `services` |
+
+> **Task shape warning.** Jobs 3 and 4 open with "how can I help you", which asks
+> the user to *state their business* rather than answer about their life. That is
+> a harder shape and needs the activation to supply the reason for being there.
+> Jobs 1 and 2 are the safe pair to build first.
+
+---
+
+## How the branching works
+
+Mirrors v1's `renderJtbd()` — see `onboarding-form/docs/BRANCHING.md`.
+
+**One difference.** v1 collapsed occupation into a *work mode* and then keyed on
+`goal|mode`. Here the cohort already **is** that collapse, so the resolution is
+one step shorter.
+
+```js
+// 1 · cohort from goal x occupation — the grid in COHORTS.md, as data
+const COHORT = {
+  exam:     { _default: 'C1' },
+  career:   { office: 'C3', freelancer: 'C4', business: 'C4', _default: 'C2' },
+  personal: { home: 'C8', _default: 'C5' },
+  travel:   { _default: 'C6' },
+  school:   { _default: 'C7' },
+  other:    { /* routed from the free-text answer — still open */ },
+};
+const cohort = COHORT[goal][occupation] || COHORT[goal]._default;
+
+// 2 · the job list comes from the cohort, and only the cohort
+let jobs = JOBS[cohort];
+
+// 3 · C1 is the one cohort with a second key, because the parts differ by exam
+if (cohort === 'C1') jobs = JOBS_EXAM[exam];
+
+// 4 · whatever they pick resolves its copy through the pair, then the family
+const key  = `${cohort}|${picked.fam}`;
+const copy = PAIR[key] || FAM[picked.fam];
+```
+
+**So the answer to "what drives the options":** goal and occupation together pick
+the cohort, and the cohort alone picks the list. Occupation never filters the
+list a second time — if two occupations should see different options, that is the
+grid telling you they are different cohorts.
+
+C1 is the single exception, and it keys on the exam rather than on occupation.
 
 ---
 
 ## The pairs
 
-Every job resolves here. This is the build list.
+The build list. Every job resolves to one of these.
 
-| # | Pair | Jobs | Means |
-|---|---|---:|---|
-| 1 | `C1\|exam` | 2 | Under the clock, against a rubric |
-| 2 | `C1\|fluency` | 2 | The freezing that costs marks |
-| 3 | `C2\|interview` | 4 | Claiming competence while being judged for it |
-| 4 | `C3\|meetings` | 4 | Being listened to by people who already hired you |
-| 5 | `C4\|pitch` | 4 | Selling your own worth |
-| 6 | `C5\|smalltalk` | 4 | Talk with no agenda and no judge |
-| 7 | `C6\|services` | 3 | Being understood by an impatient stranger |
-| 8 | `C6\|smalltalk` | 1 | The warm bit after the practical bit |
-| 9 | `C7\|meetings` | 4 | Being followed by a teacher and a room |
-| 10 | `C8\|family` | 1 | Speaking for your child |
-| 11 | `C8\|services` | 3 | Institutions, on your own |
+| # | Pair | Jobs |
+|---|---|---:|
+| 1 | `C1\|exam` | 3 |
+| 2 | `C2\|interview` | 4 |
+| 3 | `C3\|meetings` | 4 |
+| 4 | `C4\|pitch` | 4 |
+| 5 | `C5\|smalltalk` | 4 |
+| 6 | `C6\|smalltalk` | 1 |
+| 7 | `C6\|services` | 3 |
+| 8 | `C7\|meetings` | 4 |
+| 9 | `C8\|family` | 1 |
+| 10 | `C8\|services` | 3 |
 
-**32 jobs → 11 pairs.** Inside v1's budget of 12.
+**31 jobs → 10 pairs.** Under v1's budget of 12.
 
-`meetings` appears twice and `smalltalk` twice, under different cohorts — which
-is the whole reason the key is `cohort|family` and not family alone. Being
+`meetings` appears under C3 and C7, `smalltalk` under C5 and C6, `services` under
+C6 and C8 — which is why the key is `cohort|family` and not family alone. Being
 followed by classmates is not being listened to by colleagues.
-
-With a v1-style fallback chain, several of the eleven could resolve to a family
-default rather than bespoke copy. That decision belongs to step 3, once we know
-what the activation event does with the pick.
 
 ---
 
 ## What is deliberately absent
 
-**`fastspeech`** — "understand fast speakers", "keep up with fast lectures". One
-of the most commonly named problems, and reachable from five goals in v1. Left
-out because it is a *listening* problem served by a speaking task, and it needs
-no microphone — which per the source doc makes it the natural fallback for
-anyone who abandons at the mic. A feature, not a subgoal.
+**`fastspeech`** — "understand fast speakers". A listening problem served by a
+speaking task, and it needs no microphone, which makes it the natural fallback
+for anyone who abandons at the mic. A feature, not a job.
 
-**Interject** — "speak up in meetings", "answer in class". No longer homeless:
-C3 job 1 and C7 job 1. The activation event does not test it, since breaking
-into a conversation needs audio to break into, but the user can still name it.
+**Scoring dimensions** — freezing, fillers, dead air, rambling. Measured, never
+picked.
 
 ---
 
@@ -217,10 +279,10 @@ into a conversation needs audio to break into, but the user can still name it.
 | | |
 |---|---|
 | Cohorts | 8 |
-| Jobs to be done | 32 |
-| Families | 8 |
-| `cohort\|family` pairs | 11 |
-| Activation questions | 8, plus 4 exam format variants |
+| Jobs to be done | 31 |
+| Families | 7 |
+| `cohort\|family` pairs | 10 |
+| Activation questions | 8, plus the exam parts |
 
 ---
 

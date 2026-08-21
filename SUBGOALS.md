@@ -1,5 +1,13 @@
 # Activation subgoals — jobs to be done
 
+> ⚠️ **Superseded pending cohort convergence.** This draft was built goal-first.
+> The model has since moved to **cohort-first** (`goal × occupation`), goals have
+> been renamed, and Exam has become a branch rather than a leaf. Roughly half the
+> jobs below are affected — `meetings`, `presentation` and `fastspeech` are ruled
+> out of activation scope, and School yields no cohort of its own. Kept for the
+> family analysis and the four-part test, both of which still hold. Rewrite comes
+> after the cohorts are settled.
+
 Draft for review. **Nothing here is in the build yet.**
 
 One question after the goal. The user picks a single situation they want to gain

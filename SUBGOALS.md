@@ -1,31 +1,23 @@
 # Subgoals — jobs to be done, per cohort
 
 **Step 2 of three.** Built on the eight cohorts in [COHORTS.md](COHORTS.md).
+Inventory of what v1 offered is in [V1-JTBD.md](V1-JTBD.md).
 
 Nothing here is in the build yet.
 
+**Three per cohort.** Career is the only goal that splits into more than one
+cohort, so for every other goal this is also three per goal.
+
 ---
 
-## The rule: no two jobs in a cohort do the same work
+## The two rules
 
-A cohort fixes the **judge**. Within one judge's world, the jobs must still
-differ — and the axis they differ on is the **speech act**: what you actually
-have to do with language.
+**1 · No two jobs in a cohort share an act.** A cohort fixes the *judge*; within
+one judge's world the jobs must still differ, and the axis is the **speech act** —
+what you have to do with language. If two jobs share an act, one is a rewording.
 
-Without that axis every list collapses. The previous draft's C1 read *"give full
-answers"*, *"keep talking for two minutes"*, *"handle questions I couldn't
-prepare for"* — three phrasings of **talk more in an exam**. Nothing downstream
-could differ, because nothing upstream did.
-
-The three IELTS parts really are different work. Part 1 is describing yourself
-factually. Part 2 is sustaining a monologue. Part 3 is defending an opinion.
-Different tenses, different structures, different failure modes, different
-scoring. The labels just hid it.
-
-**Rule: within a cohort, every job is a different act.** If two jobs share an
-act, one of them is a rewording and should be cut.
-
-### Altitude, still
+**2 · A job sits at the middle altitude.** Written in the user's language, with
+exactly one activation falling out of it.
 
 | Altitude | Example | What it is |
 |---|---|---|
@@ -33,203 +25,192 @@ act, one of them is a rewording and should be cut.
 | **Job** | **"Talk on my own for two minutes"** | **What the user picks.** |
 | Activation | "Describe a place you often visit. You have one minute." | Derived, not picked. |
 
-### Never a job
-
-**Scoring dimensions** — freezing, fillers, dead air, rambling. What we measure,
-never what they pick.
-
-**The test's own vocabulary** — nobody wants to "handle Part 1".
+Never a job: **scoring dimensions** (freezing, fillers, rambling — what we
+measure) and **the test's own vocabulary** (nobody wants to "handle Part 1").
 
 ---
 
-## The eight acts
+## The acts
 
-The act is what the activation actually builds and scores. It replaces the
-`family` key from the previous draft: family described what *world* a job was in,
-which the cohort already fixes. The act describes what the user has to *do*,
-which is what the practice has to teach.
+The act is what the activation builds and scores.
 
 | Act | What you must do | What it demands |
 |---|---|---|
 | `describe` | Say what something or someone is like | Concrete detail, present tense |
 | `narrate` | Tell what happened, in order | Past tense, sequence, an arc |
-| `explain` | Make something understood | Structure, cause and effect, no jargon |
+| `explain` | Make something understood | Structure, cause and effect |
 | `persuade` | Make someone want or accept something | Claim, proof, close |
-| `justify` | Defend a choice, a price, a gap, an opinion | A reason, evidence, holding ground |
+| `justify` | Defend a choice, a price, a gap, an opinion | A reason, and holding ground |
 | `disagree` | Push back, decline, insist | Softener, position, reason |
 | `request` | Ask for what you need | A direct ask, and the specifics |
 | `repair` | Fix a problem or a misunderstanding | Name it, own it, propose a way out |
 
 ---
 
-## C1 — Exam
+## The 24
 
+✓ marks a job v1 already validated — see [V1-JTBD.md](V1-JTBD.md).
+
+### C1 — Exam · IELTS
 Judge: an examiner with a rubric and a clock.
 
-### IELTS · Academic and General
+| # | Job to be done | Act | Activation | v1 |
+|---|---|---|---|---|
+| 1 | Answer questions about myself | `describe` | "Do you live in a house or a flat? And what do you like about it?" | |
+| 2 | Talk on my own for two minutes | `narrate` | "Describe a place you often visit. You have one minute to prepare." | ✓ |
+| 3 | Give my opinion on bigger topics | `justify` | "Why do you think people need quiet places?" | |
 
-Speaking is identical for both; they differ in the topics sustained.
+The three parts of the test are already three different acts, so nothing was cut.
+Other exams keep the cohort and swap the parts — see COHORTS.md.
 
-| # | Job to be done | Act | Activation derived from it |
-|---|---|---|---|
-| 1 | Answer questions about myself | `describe` | "Do you live in a house or a flat? And what do you like about it?" |
-| 2 | Talk on my own for two minutes | `narrate` | "Describe a place you often visit. You have one minute to prepare." |
-| 3 | Give my opinion on bigger topics | `justify` | "Why do you think people need quiet places?" |
-
-Three, because the test has three parts and each is a different act.
-
-### The other exams
-
-Same judge, so the cohort holds. Different parts, so different acts.
-
-| Exam | Jobs |
-|---|---|
-| TOEFL | Think on my feet in 45 seconds `justify` · Say back what I read and heard `explain` · Summarise something I heard once `explain` |
-| PTE | Say a sentence back exactly · Read aloud without stumbling · Describe what I'm looking at `describe` |
-| TOEIC | Read aloud without stumbling · Describe what I'm looking at `describe` · Answer quick questions `describe` · Give my opinion on the spot `justify` |
-
-> **Task shape warning.** PTE's repeat-and-read tasks are not speech acts at all —
-> no question, no position, nothing to construct. They need a different
-> activation shape, or C1 ships IELTS-first and the rest follow.
-
----
-
-## C2 — Interview
-
+### C2 — Interview
 Judge: a hiring manager deciding in real time.
 
-| # | Job to be done | Act | Activation derived from it |
-|---|---|---|---|
-| 1 | Tell my story without rambling | `narrate` | "So — tell me about yourself." |
-| 2 | Make my case without sounding arrogant | `persuade` | "Why should we hire you?" |
-| 3 | Explain my gap without apologising | `justify` | "There's a two-year gap here. What were you doing?" |
-| 4 | Ask my own questions at the end | `request` | "Do you have any questions for us?" |
+| # | Job to be done | Act | Activation | v1 |
+|---|---|---|---|---|
+| 1 | Tell my story without rambling | `narrate` | "So — tell me about yourself." | ✓ |
+| 2 | Make my case without sounding arrogant | `persuade` | "Why should we hire you?" | ✓ |
+| 3 | Explain my gap without apologising | `justify` | "There's a two-year gap here. What were you doing?" | ✓ |
 
-Job 3 earns its place for `career break`, `homemaker` and `looking for work` —
-the three occupations that route here carrying a gap.
+Job 3 serves `career break`, `homemaker` and `looking for work` — three of the
+four occupations routing here arrive carrying a gap.
 
----
-
-## C3 — At Work
-
+### C3 — At Work
 Judge: colleagues who already hired you.
 
-| # | Job to be done | Act | Activation derived from it |
-|---|---|---|---|
-| 1 | Give a clear update | `describe` | "What are you working on right now?" |
-| 2 | Explain my work to people outside my team | `explain` | "What does your team actually do?" |
-| 3 | Flag a problem early | `repair` | "Will it be ready by Friday?" |
-| 4 | Push back on a plan | `disagree` | "We're going with option A. Any thoughts?" |
+| # | Job to be done | Act | Activation | v1 |
+|---|---|---|---|---|
+| 1 | Give a clear update | `describe` | "What are you working on right now?" | |
+| 2 | Say what I think in a meeting | `justify` | "We're going with option A. Any thoughts?" | ✓ |
+| 3 | Flag a problem early | `repair` | "Will it be ready by Friday?" | |
 
----
-
-## C4 — Own Boss
-
+### C4 — Own Boss
 Judge: a customer deciding whether to hire you.
 
-| # | Job to be done | Act | Activation derived from it |
-|---|---|---|---|
-| 1 | Explain what I do in one breath | `persuade` | "So, tell me about your business." |
-| 2 | Say my price without flinching | `describe` | "How much do you charge?" |
-| 3 | Defend my price | `justify` | "Your quote is higher than the others. Why?" |
-| 4 | Handle an unhappy customer | `repair` | "Honestly, this isn't what I asked for." |
+| # | Job to be done | Act | Activation | v1 |
+|---|---|---|---|---|
+| 1 | Explain what I do in one breath | `persuade` | "So, tell me about your business." | ✓ |
+| 2 | Say my price and hold it | `justify` | "Your quote is higher than the others. Why?" | ✓ |
+| 3 | Handle an unhappy customer | `repair` | "Honestly, this isn't what I asked for." | |
 
 `freelancer` reads "my work" for "my business" throughout.
 
----
-
-## C5 — Belonging
-
+### C5 — Belonging
 Judge: nobody, and that is the problem.
 
-Previously the worst list — four phrasings of *say more than one line*.
+| # | Job to be done | Act | Activation | v1 |
+|---|---|---|---|---|
+| 1 | Talk about myself to someone new | `describe` | "What do you like doing in your free time?" | ✓ |
+| 2 | Tell a small story | `narrate` | "So how was your weekend?" | |
+| 3 | Ask questions back instead of just answering | `request` | "I've just moved here from Japan." | |
 
-| # | Job to be done | Act | Activation derived from it |
-|---|---|---|---|
-| 1 | Talk about myself to someone new | `describe` | "What do you like doing in your free time?" |
-| 2 | Tell a small story | `narrate` | "So how was your weekend?" |
-| 3 | Talk about what I do without shrinking | `explain` | "And what do you do?" |
-| 4 | Ask questions back instead of just answering | `request` | "I've just moved here from Japan." |
+Job 1 is v1's most-offered label of all 47 — "Make small talk feel natural"
+appears in five separate lists.
 
----
-
-## C6 — Travel
-
+### C6 — Travel
 Judge: a stranger with thirty seconds.
 
-| # | Job to be done | Act | Activation derived from it |
-|---|---|---|---|
-| 1 | Introduce myself to a stranger | `describe` | "Where are you from?" |
-| 2 | Ask for what I need | `request` | "Do you have a reservation?" |
-| 3 | Explain when something goes wrong | `repair` | "What seems to be the problem?" |
-| 4 | Tell them about my trip | `narrate` | "And how long are you staying?" |
+| # | Job to be done | Act | Activation | v1 |
+|---|---|---|---|---|
+| 1 | Introduce myself to a stranger | `describe` | "Where are you from?" | ✓ |
+| 2 | Ask for what I need | `request` | "Do you have a reservation?" | ✓ |
+| 3 | Explain when something goes wrong | `repair` | "What seems to be the problem?" | ✓ |
 
----
+The only cohort where all three are v1-validated.
 
-## C7 — School
-
+### C7 — School
 Judge: a teacher and a room of classmates.
 
-| # | Job to be done | Act | Activation derived from it |
-|---|---|---|---|
-| 1 | Speak up when I'm called on | `justify` | "And what do you think about that?" |
-| 2 | Present my work to the class | `explain` | "Come up and tell us about your project." |
-| 3 | Ask a question in class | `request` | "Does anyone have questions before we move on?" |
-| 4 | Disagree with a classmate | `disagree` | "I think the answer is B. Does everyone agree?" |
+| # | Job to be done | Act | Activation | v1 |
+|---|---|---|---|---|
+| 1 | Speak up when I'm called on | `justify` | "And what do you think about that?" | ✓ |
+| 2 | Present my work to the class | `explain` | "Come up and tell us about your project." | |
+| 3 | Ask a question in class | `request` | "Does anyone have questions before we move on?" | |
+
+> Job 3 asks the user to *produce* a question rather than answer one. It needs
+> the activation to supply lesson content first, or it does not work.
+
+### C8 — Household
+Judge: a professional who holds something the family needs.
+
+| # | Job to be done | Act | Activation | v1 |
+|---|---|---|---|---|
+| 1 | Speak up for my child | `persuade` | "Tell me how things are going at home." | ✓ |
+| 2 | Describe a problem clearly | `describe` | "What seems to be the problem?" | ✓ |
+| 3 | Push back when I'm told no | `disagree` | "I'm afraid there's nothing until March." | |
+
+Job 3 is why this cohort exists — being refused by an institution, in a second
+language, with someone else's welfare at stake.
 
 ---
 
-## C8 — Household
+## What was cut, and why
 
-Judge: a professional who holds something the family needs.
+Reversible. Each of these was the fourth option in its cohort.
 
-| # | Job to be done | Act | Activation derived from it |
+| Cut | From | Act | Why it lost |
 |---|---|---|---|
-| 1 | Speak up for my child | `persuade` | "Tell me how things are going at home." |
-| 2 | Describe a problem clearly | `describe` | "What seems to be the problem?" |
-| 3 | Ask for what we need | `request` | "Is there anything else?" |
-| 4 | Push back when I'm told no | `disagree` | "I'm afraid there's nothing available until March." |
-
-Job 4 is the hard one and the reason this cohort exists. Being told no by an
-institution, in a second language, with someone else's welfare at stake.
+| Ask my own questions at the end | C2 | `request` | Lowest stakes in the list, and the weakest activation — it asks the user to invent a question. |
+| Explain my work to people outside my team | C3 | `explain` | Overlaps the update. Lower frequency than the other three. |
+| Push back on a plan | C3 | `disagree` | Genuinely valuable, but "say what I think in a meeting" is v1's most-validated work label and covers more people. |
+| Say my price without flinching | C4 | `describe` | Folded into "say my price and hold it" — saying it and defending it are one moment. |
+| Chase a late payment | C4 | `request` | Real for freelancers, but loses to price and to unhappy customers on volume. |
+| Talk about what I do without shrinking | C5 | `explain` | Overlaps "talk about myself to someone new". |
+| Tell them about my trip | C6 | `narrate` | Weakest of the four and overlaps the introduction. |
+| Disagree with a classmate | C7 | `disagree` | Rarer than the other three, and hard to build a fair activation for. |
+| Ask for what we need | C8 | `request` | Folds into jobs 1 and 3. |
 
 ---
 
 ## What this costs to build
 
-The act is the build unit, not the job.
-
-| Act | Cohorts it appears in | Jobs |
+| Act | Cohorts | Jobs |
 |---|---|---:|
-| `describe` | C1 C3 C4 C5 C6 C8 | 6 |
-| `request` | C2 C5 C6 C7 C8 | 5 |
-| `narrate` | C1 C2 C5 C6 | 4 |
-| `justify` | C1 C2 C4 C7 | 4 |
-| `explain` | C3 C5 C7 | 3 |
+| `describe` | C1 C3 C5 C6 C8 | 5 |
+| `justify` | C1 C2 C3 C4 C7 | 5 |
+| `narrate` | C1 C2 C5 | 3 |
 | `persuade` | C2 C4 C8 | 3 |
-| `disagree` | C3 C7 C8 | 3 |
 | `repair` | C3 C4 C6 | 3 |
+| `request` | C5 C6 C7 | 3 |
+| `explain` | C7 | 1 |
+| `disagree` | C8 | 1 |
 
-**31 jobs · 8 acts.** Eight task engines to build — how the prompt is posed, what
-the scaffold looks like, what gets scored. Each job then costs one prompt and one
-four-step scaffold, which is content rather than engineering.
+**24 jobs · 8 engines.** An engine is how the prompt is posed, what the scaffold
+looks like and what gets scored. Each job then costs one prompt and one four-step
+scaffold — content, not engineering.
 
-That is the honest reconciliation of the earlier count. You cannot have 31
-genuinely different jobs *and* 10 build units — if each job does different work,
-each needs its own task. The saving is that acts repeat across cohorts: `narrate`
-in an exam and `narrate` to a stranger are the same engine with different
-content and a different judge.
+> **If the budget tightens to six engines**, `explain` and `disagree` are the
+> candidates: they carry one job each. Both are good jobs — C7's presentation is
+> the biggest speaking moment in school life, and C8's job 3 is the reason that
+> cohort exists — so this is a cost decision, not a quality one.
+
+---
+
+## The v1 technique still to adopt
+
+v1 personalises the **label**, not the job. `career|interview` is one job that
+speaks four ways depending on who is reading it. The cohort model currently drops
+this — a student and a returning parent both route to C2 and read identical copy.
+
+A copy layer, not a structural change:
+
+| Job | `jobseek` | `student` | `homemaker` |
+|---|---|---|---|
+| Tell my story without rambling | Answer "tell me about yourself" | Talk about myself in an interview | Talk about the skills I built at home |
+
+This is also where **"Win over my partner's family"** belongs — v1's most
+emotionally loaded label, and a setting rather than an act. It re-words C5's
+"tell a small story" for the people it applies to, instead of spending one of
+three slots on it.
 
 ---
 
 ## How the branching works
 
-Mirrors v1's `renderJtbd()` — see `onboarding-form/docs/BRANCHING.md`. v1 keyed
-on `goal|mode`; here the cohort already **is** that collapse, so it is one step
-shorter.
+Mirrors v1's `renderJtbd()`. v1 keyed on `goal|mode`; the cohort already **is**
+that collapse, so this is one step shorter.
 
 ```js
-// 1 · cohort from goal x occupation — the grid in COHORTS.md, as data
 const COHORT = {
   exam:     { _default: 'C1' },
   career:   { office: 'C3', freelancer: 'C4', business: 'C4', _default: 'C2' },
@@ -240,29 +221,26 @@ const COHORT = {
 };
 const cohort = COHORT[goal][occupation] || COHORT[goal]._default;
 
-// 2 · the job list comes from the cohort, and only the cohort
-let jobs = JOBS[cohort];
+let jobs = JOBS[cohort];                       // the cohort alone picks the list
+if (cohort === 'C1') jobs = JOBS_EXAM[exam];   // the one second key
 
-// 3 · C1 is the one cohort with a second key, because the parts differ by exam
-if (cohort === 'C1') jobs = JOBS_EXAM[exam];
-
-// 4 · the pick names its act; the act picks the engine, the cohort the content
-const engine = ENGINE[picked.act];
-const copy   = CONTENT[`${cohort}|${picked.act}`];
+const engine = ENGINE[picked.act];             // act picks the engine
+const label  = LABEL[`${picked.id}|${occupation}`] || picked.label;   // v1's rewording
 ```
 
 **What drives the options:** goal and occupation together pick the cohort, and
 the cohort alone picks the list. Occupation never filters twice — if two
 occupations should see different options, the grid is telling you they are
-different cohorts. C1 is the single exception, keyed on the exam.
+different cohorts.
 
 ---
 
-## What is deliberately absent
+## Still open
 
-**Understanding fast speakers.** A listening problem served by a speaking task,
-and it needs no microphone — which makes it the natural fallback for anyone who
-abandons at the mic. A feature, not a job.
+**`fastspeech`** — "understand fast speakers" is 5 of v1's 47 and reachable from
+five of six goals. Dropped here as a listening problem that needs no microphone,
+which makes it the natural fallback for anyone who abandons at the mic. Either
+the right call or the biggest omission in the set; worth settling explicitly.
 
 ---
 
@@ -271,9 +249,10 @@ abandons at the mic. A feature, not a job.
 | | |
 |---|---|
 | Cohorts | 8 |
-| Jobs to be done | 31 |
-| Speech acts (task engines) | 8 |
-| Activation questions | one per job |
+| Jobs to be done | 24 |
+| Per cohort | 3 |
+| Engines (acts) | 8 |
+| v1-validated | 13 of 24 |
 
 ---
 

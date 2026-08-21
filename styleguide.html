@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="app">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stimuler · Onboarding Style Guide</title>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ============ guide chrome (overrides prototype page styles) ============ */
+html{scroll-behavior:smooth;}
+body{
+  overflow:auto;
+  background:#FAFAFB;
+  color:#17121F;
+  padding-bottom:120px;
+}
+.sg-header{
+  position:sticky;
+  top:0;
+  z-index:40;
+  background:rgba(250,250,251,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #ECE9F1;
+  padding:18px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.sg-header h1{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:18px;
+}
+.sg-header h1 small{
+  display:block;
+  font-weight:500;
+  font-size:12.5px;
+  color:#8A8494;
+  margin-top:2px;
+}
+.sg-switch{display:flex;gap:8px;background:#EFEDF4;padding:5px;border-radius:999px;}
+.sg-switch button{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:13.5px;
+  color:#6B6577;
+  padding:9px 18px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:all .18s ease;
+}
+.sg-switch button .dot{width:10px;height:10px;border-radius:50%;}
+.sg-switch button[data-set="app"] .dot{background:#4B38C9;box-shadow:2px 0 0 0 #D9A24A inset;}
+.sg-switch button[data-set="lavender"] .dot{background:#8B49E2;}
+.sg-switch button[data-set="gold"] .dot{background:#F6C445;}
+.sg-switch button[data-set="indigo"] .dot{background:#6D7CFF;box-shadow:2px 0 0 0 #F2B93B inset;}
+.sg-switch button.active{background:#17121F;color:#fff;}
+.sg-note{
+  font-family:var(--font-body);
+  font-size:13.5px;
+  line-height:20px;
+  color:#6B6577;
+  max-width:520px;
+}
+.sg-note b{color:#17121F;}
+
+main{max-width:1220px;margin:0 auto;padding:0 40px;}
+.sg-section{margin-top:56px;}
+.sg-section > h2{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:15px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#9A94A6;
+  padding-bottom:14px;
+  border-bottom:1px solid #ECE9F1;
+  margin-bottom:24px;
+}
+.sg-grid{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;}
+.sg-card{
+  background:#fff;
+  border:1px solid #ECE9F1;
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 1px 3px rgba(23,18,31,.04);
+}
+.sg-card > h3{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:14px;
+  margin-bottom:4px;
+}
+.sg-card > p.cap{
+  font-family:var(--font-body);
+  font-size:12.5px;
+  color:#8A8494;
+  margin-bottom:14px;
+}
+
+/* swatches */
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:10px;min-width:480px;}
+.swatch{
+  border:1px solid #ECE9F1;
+  border-radius:12px;
+  overflow:hidden;
+}
+.swatch .chipc{height:56px;}
+.swatch .meta{padding:8px 10px;background:#fff;}
+.swatch .meta b{
+  display:block;
+  font-family:ui-monospace,Menlo,monospace;
+  font-size:11px;
+  color:#17121F;
+}
+.swatch .meta span{
+  font-family:ui-monospace,Menlo,monospace;
+  font-size:10.5px;
+  color:#9A94A6;
+  word-break:break-all;
+}
+
+/* dark canvases that host real components */
+.sg-canvas{
+  position:relative;
+  width:382px;
+  border-radius:24px;
+  background:var(--bg);
+  overflow:hidden;
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  align-items:flex-start;
+}
+.sg-canvas.wide{width:820px;}
+.sg-canvas .ambient{border-radius:inherit;}
+.sg-canvas > *{position:relative;}
+.sg-label{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:10.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:color-mix(in srgb, var(--text-faint) 80%, transparent);
+}
+/* neutralise prototype positioning inside canvases */
+.sg-canvas .bottombar,.sg-canvas .micbar{position:static;transform:none;opacity:1;pointer-events:auto;}
+.sg-canvas .micbar{gap:40px;}
+.sg-canvas .read-card{margin-bottom:0;align-self:flex-start;}
+.sg-canvas .drill-cta,.sg-canvas .graph-cta{position:static;align-self:stretch;}
+.sg-canvas .topbar{align-self:stretch;z-index:auto;}
+.sg-canvas .progress-block{border-radius:14px;}
+.sg-canvas .options{align-items:flex-start;}
+.sg-canvas .word-card,.sg-canvas .passage-card{align-self:stretch;margin-top:0;}
+.sg-canvas .sticker{margin:0;}
+.sg-canvas .chat-demo{display:flex;flex-direction:column;gap:14px;align-self:stretch;}
+.sg-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+
+/* type ramp */
+.type-ramp{display:flex;flex-direction:column;gap:0;align-self:stretch;}
+.type-row{
+  display:flex;
+  align-items:baseline;
+  gap:18px;
+  padding:12px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.type-row:last-child{border-bottom:none;}
+.type-row .spec{
+  flex-shrink:0;
+  width:150px;
+  font-family:ui-monospace,Menlo,monospace;
+  font-size:10.5px;
+  line-height:15px;
+  color:var(--text-faint);
+}
+.type-row .sample{color:var(--text-hi);}
+</style>
+</head>
+<body>
+
+<header class="sg-header">
+  <h1>Onboarding Style Guide<small>Stimuler · India onboarding revamp — tokens.css is the source of truth</small></h1>
+  <div class="sg-switch" id="switch">
+    <button data-set="app" class="active"><span class="dot"></span>★ App (locked)</button>
+    <button data-set="lavender"><span class="dot"></span>Lavender</button>
+    <button data-set="gold"><span class="dot"></span>Dark + gold</button>
+    <button data-set="indigo"><span class="dot"></span>Indigo + gold</button>
+  </div>
+  <p class="sg-note" id="note"></p>
+</header>
+
+<main>
+
+  <!-- ================= COLOR ================= -->
+  <section class="sg-section">
+    <h2>01 · Color — semantic tokens</h2>
+    <div class="sg-grid">
+      <div class="sg-card">
+        <h3>Surfaces</h3>
+        <p class="cap">App background, raised header, glass fills</p>
+        <div class="swatches" data-tokens="--bg,--bg-raise,--glass-08,--glass-12"></div>
+      </div>
+      <div class="sg-card">
+        <h3>Text</h3>
+        <p class="cap">Four-step hierarchy — no other text colors allowed</p>
+        <div class="swatches" data-tokens="--text-hi,--text-mid,--text-low,--text-faint"></div>
+      </div>
+      <div class="sg-card">
+        <h3>Indigo ramp — locked color set</h3>
+        <p class="cap">Brand periwinkle scale; interactive tokens map onto it</p>
+        <div class="swatches" data-tokens="--blue-50,--blue-100,--blue-200,--blue-300,--blue-400,--blue-500,--blue-600,--blue-700,--blue-800,--blue-900"></div>
+      </div>
+      <div class="sg-card">
+        <h3>Interactive</h3>
+        <p class="cap">Every tappable fill is blue-500; ramp 300/400 for borders only</p>
+        <div class="swatches" data-tokens="--accent,--chip-bg,--chip-border,--mic-idle,--cta-bg,--cta-fg,--cta-disabled-bg,--skip-bg,--skip-border,--field-focus"></div>
+      </div>
+      <div class="sg-card">
+        <h3>Progress &amp; reward</h3>
+        <p class="cap">Single gold bar, celebratory text, growth graph</p>
+        <div class="swatches" data-tokens="--progress,--progress-grad-a,--progress-grad-b,--track,--highlight,--graph-accent,--tag-bg"></div>
+      </div>
+      <div class="sg-card">
+        <h3>Feedback</h3>
+        <p class="cap">Success greens (incl. read-aloud done card), warnings, recording</p>
+        <div class="swatches" data-tokens="--succ-300,--succ-250,--succ-400,--read-done-bg,--read-done-border,--read-done-text,--warn-300,--rec"></div>
+      </div>
+      <div class="sg-card">
+        <h3>Chat anatomy</h3>
+        <p class="cap">Bubble fill + gradient border, reply chip, option rows</p>
+        <div class="swatches" data-tokens="--bubble-fill,--bubble-brd-a,--bubble-brd-b,--chip-bg,--chip-fg,--opt-bg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TYPOGRAPHY ================= -->
+  <section class="sg-section">
+    <h2>02 · Typography — Inter Display (structure) · Geist (voice)</h2>
+    <div class="sg-grid">
+      <div class="sg-canvas wide">
+        <div class="ambient"></div>
+        <p class="sg-label">Inter Display — headings, labels, buttons</p>
+        <div class="type-ramp">
+          <div class="type-row"><span class="spec">Display 28/36 · 500<br>takeover titles</span><span class="sample" style="font-family:var(--font-display);font-weight:500;font-size:28px;line-height:36px">You’re at the Beginner Level...</span></div>
+          <div class="type-row"><span class="spec">Display 24/34 · 500<br>drill titles</span><span class="sample" style="font-family:var(--font-display);font-weight:500;font-size:24px;line-height:34px">Firstly let’s correct your <span style="color:var(--succ-300)">Pronunciation errors</span></span></div>
+          <div class="type-row"><span class="spec">Display 20/28 · 500<br>reply chips</span><span class="sample" style="font-family:var(--font-display);font-weight:500;font-size:20px;line-height:28px">Everyday conversation</span></div>
+          <div class="type-row"><span class="spec">Display 18/24 · 500<br>option rows</span><span class="sample" style="font-family:var(--font-display);font-weight:500;font-size:18px;line-height:24px;color:var(--opt-fg)">Keep it in English</span></div>
+          <div class="type-row"><span class="spec">Display 18/24 · 600<br>buttons</span><span class="sample" style="font-family:var(--font-display);font-weight:600;font-size:18px;line-height:24px">Continue</span></div>
+        </div>
+        <p class="sg-label" style="margin-top:10px">Geist — Sarah’s voice, body, data</p>
+        <div class="type-ramp">
+          <div class="type-row"><span class="spec">Geist 22/32 · 500<br>read-aloud passage</span><span class="sample" style="font-weight:500;font-size:22px;line-height:32px">I love to paint in my free time</span></div>
+          <div class="type-row"><span class="spec">Geist 17.5/28 · 400<br>chat bubbles</span><span class="sample" style="font-size:17.5px;line-height:28px">So, what’s your native language?</span></div>
+          <div class="type-row"><span class="spec">Geist 16/24 · 400<br>testimonials, body</span><span class="sample" style="font-size:16px;line-height:24px">Thanks for sharing.. langsung download dan “Ketagihan”</span></div>
+          <div class="type-row"><span class="spec">Geist 15.3/23 · 500<br>progress label</span><span class="sample" style="font-weight:500;font-size:15.33px;line-height:23px;color:var(--progress-label)">69% completed</span></div>
+          <div class="type-row"><span class="spec">Geist 14/22 · 400<br>hints, handles, captions</span><span class="sample" style="font-size:14px;line-height:22px;color:var(--text-low)">Stress over the sound ‘nt’</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CHAT COMPONENTS ================= -->
+  <section class="sg-section">
+    <h2>03 · Chat components</h2>
+    <div class="sg-grid">
+
+      <div class="sg-canvas">
+        <div class="ambient"></div>
+        <p class="sg-label">Progress bar (single, gold) — start / 15% / 76%</p>
+        <div class="topbar"><div class="progress-block">
+          <p class="progress-label">Let’s get started</p>
+          <div class="progress-track"><div class="progress-fill" style="width:16px"></div></div>
+        </div></div>
+        <div class="topbar"><div class="progress-block">
+          <p class="progress-label">15% Completed</p>
+          <div class="progress-track"><div class="progress-fill" style="width:15%"></div></div>
+        </div></div>
+        <div class="topbar"><div class="progress-block">
+          <p class="progress-label">76% completed</p>
+          <div class="progress-track"><div class="progress-fill" style="width:76%"></div></div>
+        </div></div>
+        <p class="sg-label">Drill variant (green)</p>
+        <div class="topbar is-green"><div class="progress-block">
+          <p class="progress-label">Well done, You sounded like a native!</p>
+          <div class="progress-track"><div class="progress-fill" style="width:70%"></div></div>
+        </div></div>
+      </div>
+
+      <div class="sg-canvas">
+        <div class="ambient"></div>
+        <p class="sg-label">Sarah bubble — voice state (fill shimmer + pulse) / active / dimmed / typing</p>
+        <div class="chat-demo">
+          <div class="msg speaking">
+            <div class="dp"><img src="assets/sarah-avatar.png" alt=""></div>
+            <div class="bubble"><p>Here’s my promise to you. if you commit to practicing with me this year…</p></div>
+          </div>
+          <div class="msg">
+            <div class="dp"><img src="assets/sarah-avatar.png" alt=""></div>
+            <div class="bubble"><p>Hey! I’m Sarah and 2026 is going to YOUR year for English fluency!</p></div>
+          </div>
+          <div class="msg dim">
+            <div class="dp"><img src="assets/sarah-avatar.png" alt=""></div>
+            <div class="bubble"><p>Older messages drop to 70% while the newest keeps full contrast.</p></div>
+          </div>
+          <div class="msg">
+            <div class="dp"><img src="assets/sarah-avatar.png" alt=""></div>
+            <div class="bubble typing"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <p class="sg-label">User reply chip — plain / with icon</p>
+        <div class="sg-row">
+          <div class="chip">Indonesian</div>
+          <div class="chip"><span class="chip-ico">🌱</span>Beginner</div>
+        </div>
+      </div>
+
+      <div class="sg-canvas">
+        <div class="ambient"></div>
+        <p class="sg-label">Option rows — plain (app) / selected / stacked / with icon</p>
+        <div class="options" style="align-self:stretch">
+          <p class="opt-head">Select an option</p>
+          <div class="opt-list" style="width:100%">
+            <button class="opt"><span class="opt-label">Indonesian</span></button>
+            <button class="opt selected"><span class="opt-label">Tamil</span></button>
+            <button class="opt stacked">
+              <span class="opt-top"><span class="ico">🌱</span><span class="opt-label">Beginner</span></span>
+              <span class="opt-desc">I know a few words, but I can’t make sentences.</span>
+            </button>
+            <button class="opt"><span class="ico">🌎</span><span class="opt-label">See more languages</span></button>
+          </div>
+          <button class="opt-link">Select some other language</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INPUTS & BUTTONS ================= -->
+  <section class="sg-section">
+    <h2>04 · Inputs &amp; buttons</h2>
+    <div class="sg-grid">
+
+      <div class="sg-canvas">
+        <div class="ambient"></div>
+        <p class="sg-label">Name field + counter · phone field</p>
+        <div class="input-block" style="align-items:flex-start">
+          <input class="name-field" value="Sriram Bro">
+          <span class="char-count">10/50</span>
+        </div>
+        <div class="phone-field-wrap">
+          <img class="flag" src="assets/flag-in.svg" alt="">
+          <span class="cc">+91</span>
+          <input type="tel" placeholder="Phone Number">
+        </div>
+        <p class="sg-label">Primary CTA — disabled / ready · text link</p>
+        <div class="sg-row">
+          <button class="btn-continue">Continue</button>
+          <button class="btn-continue ready">Continue</button>
+        </div>
+        <button class="skip-link">Skip for now</button>
+      </div>
+
+      <div class="sg-canvas">
+        <div class="ambient"></div>
+        <p class="sg-label">Skip — active (indigo) / dimmed while answering</p>
+        <div class="sg-row">
+          <button class="pill pill-skip">Skip <img src="assets/chevron-dbl.svg" alt=""></button>
+          <button class="pill pill-skip dimmed">Skip <img src="assets/chevron-dbl.svg" alt=""></button>
+          <button class="btn-report">See detailed report</button>
+        </div>
+        <p class="sg-label">Conversation mic (from stimuler-flow) — idle orb / listening / confirmed. Used for reading &amp; hint states.</p>
+        <div class="sg-row" style="gap:22px">
+          <div class="mic-orb idle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
+          </div>
+        </div>
+        <div class="mic-orb-pill">
+          <span class="op-cancel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span>
+          <span class="op-wave">
+            <i style="height:8px;animation-delay:0s"></i><i style="height:14px;animation-delay:.08s"></i><i style="height:22px;animation-delay:.16s"></i><i style="height:30px;animation-delay:.24s"></i><i style="height:24px;animation-delay:.32s"></i><i style="height:33px;animation-delay:.4s"></i><i style="height:18px;animation-delay:.48s"></i><i style="height:27px;animation-delay:.56s"></i><i style="height:34px;animation-delay:.64s"></i><i style="height:22px;animation-delay:.72s"></i><i style="height:29px;animation-delay:.8s"></i><i style="height:15px;animation-delay:.88s"></i><i style="height:24px;animation-delay:.96s"></i><i style="height:10px;animation-delay:1.04s"></i>
+          </span>
+          <span class="op-confirm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 7"/></svg></span>
+        </div>
+        <p class="sg-label">Success toast (app)</p>
+        <div class="toast-banner">
+          <span class="tb-check"><svg viewBox="0 0 24 24" fill="none" stroke="#06301B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12.5 9.5 18 20 6.5"/></svg></span>
+          <span><span class="tb-title">Well done !</span><br><span class="tb-sub">You finished reading your first English phrase</span></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CARDS ================= -->
+  <section class="sg-section">
+    <h2>05 · Cards</h2>
+    <div class="sg-grid">
+
+      <div class="sg-canvas">
+        <div class="ambient"></div>
+        <p class="sg-label">Testimonial card (X)</p>
+        <article class="t-card" style="width:100%">
+          <div class="t-head">
+            <div class="t-id">
+              <img src="assets/avatar-syahrier.png" alt="">
+              <div><p class="t-name">Syahrier</p><p class="t-handle">@rezsyah</p></div>
+            </div>
+            <img class="x" src="assets/x-icon.svg" alt="X">
+          </div>
+          <p class="t-body">Thanks for sharing.. langsung download dan “Ketagihan”, ternyata masih banyak yg harus di-improve. 😄</p>
+        </article>
+        <p class="sg-label">Read-aloud card — idle (indigo) / success (green)</p>
+        <div class="read-card" style="width:100%">
+          <p class="rc-label">Read it out loud:</p>
+          <p class="rc-text"><span class="said">I love to paint in my </span><span class="rest">free time, it helps me relax and be creative.</span></p>
+          <div class="rc-icons"><span><svg viewBox="0 0 20 20" fill="currentColor"><path d="M7.75 2.75a.75.75 0 0 0-1.5 0v1.258a32.987 32.987 0 0 0-3.599.278.75.75 0 1 0 .198 1.487A31.545 31.545 0 0 1 8.7 5.545 19.381 19.381 0 0 1 7 9.56a19.418 19.418 0 0 1-1.002-2.05.75.75 0 0 0-1.384.577 20.935 20.935 0 0 0 1.492 2.91 19.613 19.613 0 0 1-3.828 4.154.75.75 0 1 0 .945 1.164A21.116 21.116 0 0 0 7 12.331c.095.132.192.262.29.391a.75.75 0 0 0 1.194-.91c-.204-.266-.4-.538-.59-.815a20.888 20.888 0 0 0 2.333-5.332c.31.031.618.068.924.108a.75.75 0 0 0 .198-1.487 32.832 32.832 0 0 0-3.599-.278V2.75Z"/><path d="M13 8a.75.75 0 0 1 .671.415l4.25 8.5a.75.75 0 1 1-1.342.67L15.787 16h-5.573l-.793 1.585a.75.75 0 1 1-1.342-.67l4.25-8.5A.75.75 0 0 1 13 8Zm2.037 6.5L13 10.427 10.964 14.5h4.073Z"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"/></svg></span></div>
+        </div>
+        <div class="read-card done" style="width:100%">
+          <p class="rc-label">Read it out loud:</p>
+          <p class="rc-text"><span class="said">I love to paint in my free time, it helps me relax and be creative.</span></p>
+          <div class="rc-icons"><span><svg viewBox="0 0 20 20" fill="currentColor"><path d="M7.75 2.75a.75.75 0 0 0-1.5 0v1.258a32.987 32.987 0 0 0-3.599.278.75.75 0 1 0 .198 1.487A31.545 31.545 0 0 1 8.7 5.545 19.381 19.381 0 0 1 7 9.56a19.418 19.418 0 0 1-1.002-2.05.75.75 0 0 0-1.384.577 20.935 20.935 0 0 0 1.492 2.91 19.613 19.613 0 0 1-3.828 4.154.75.75 0 1 0 .945 1.164A21.116 21.116 0 0 0 7 12.331c.095.132.192.262.29.391a.75.75 0 0 0 1.194-.91c-.204-.266-.4-.538-.59-.815a20.888 20.888 0 0 0 2.333-5.332c.31.031.618.068.924.108a.75.75 0 0 0 .198-1.487 32.832 32.832 0 0 0-3.599-.278V2.75Z"/><path d="M13 8a.75.75 0 0 1 .671.415l4.25 8.5a.75.75 0 1 1-1.342.67L15.787 16h-5.573l-.793 1.585a.75.75 0 1 1-1.342-.67l4.25-8.5A.75.75 0 0 1 13 8Zm2.037 6.5L13 10.427 10.964 14.5h4.073Z"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"/></svg></span></div>
+        </div>
+      </div>
+
+      <div class="sg-canvas">
+        <div class="ambient"></div>
+        <p class="sg-label">Practice passage — highlighted / corrected words</p>
+        <div class="hs-passage" style="margin:0;align-self:stretch">
+          <p>I love to <b class="hlw ok">paint</b> in my free time, it helps me <b class="hlw">relax</b> and be creative.</p>
+        </div>
+        <p class="sg-label">Pronunciation card — pending / completed (hint flow)</p>
+        <div class="pron-card" style="margin-top:0;align-self:stretch">
+          <div class="pc-top">
+            <div><div class="pc-word">rel<i>ax</i></div><div class="pc-ph">re.leac.ex</div></div>
+            <div class="pc-play"><img src="assets/sarah-avatar.png" alt=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M8 9v6M4 10.5v3M16 7v10M20 9.5v5"/></svg></div>
+          </div>
+          <div class="pc-bottom">
+            <div class="pc-score"><b>39%</b><span>Current score</span></div>
+            <div class="pc-right">
+              <div class="pc-tip">Stress over the sound <b>‘ax’</b></div>
+              <button class="pc-btn"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="9" y="2.5" width="6" height="12" rx="3"/><path d="M5 11.5v.5a7 7 0 0 0 14 0v-.5M12 19.5V22M8 22h8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><span>Tap to speak</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="pron-card done" style="margin-top:0;align-self:stretch">
+          <span class="pc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div class="pc-top">
+            <div><div class="pc-word">pai<i>nt</i></div><div class="pc-ph">pah.ie.nt</div></div>
+            <div class="pc-play"><img src="assets/sarah-avatar.png" alt=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M8 9v6M4 10.5v3M16 7v10M20 9.5v5"/></svg></div>
+          </div>
+          <div class="pc-bottom">
+            <div class="pc-score"><b>80%</b><span>Current score</span></div>
+            <div class="pc-right">
+              <div class="pc-tip">Stress over the sound <b>‘nt’</b></div>
+              <button class="pc-btn done"><span>Completed</span></button>
+            </div>
+          </div>
+        </div>
+        <p class="sg-label">Sticker &amp; avatar treatment</p>
+        <div class="sg-row">
+          <div class="sticker" style="width:120px;height:120px;margin:0"><img class="art" src="assets/sara-greets.png" alt=""></div>
+          <div class="dp" style="width:40px;height:40px;border-radius:50%;background:#1B1D3B;border:1px solid rgba(155,161,231,.5);overflow:hidden;position:relative"><img src="assets/sarah-avatar.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<script>
+const NOTES = {
+  app: '<b>★ App — locked.</b> Interaction runs on the periwinkle ramp — every interactive fill is <b>#6C63FF</b> (blue-500), borders from 300/400; a single <b>gold</b> bar owns progress; success moments go deep green. Bubbles are solid <b>#2A283A</b>, borderless, radius 24, 19px text.',
+  lavender: '<b>Refined lavender</b> (exploration, not chosen). Violet #8B49E2 as the single interactive voice; lavenders reserved for text.',
+  gold: '<b>Stimuler dark + gold</b> (exploration, not chosen). Warm near-black with gold carrying both interaction and reward.',
+  indigo: '<b>Indigo + gold split</b> (exploration, not chosen). Indigo owns interaction; gold only on progress &amp; reward.',
+};
+const note = document.getElementById('note');
+const buttons = document.querySelectorAll('#switch button');
+
+function setTheme(t){
+  document.documentElement.dataset.theme = t;
+  buttons.forEach(b => b.classList.toggle('active', b.dataset.set === t));
+  note.innerHTML = NOTES[t];
+  renderSwatches();
+}
+buttons.forEach(b => b.addEventListener('click', () => setTheme(b.dataset.set)));
+
+function renderSwatches(){
+  const cs = getComputedStyle(document.documentElement);
+  document.querySelectorAll('.swatches').forEach(grid => {
+    grid.innerHTML = '';
+    grid.dataset.tokens.split(',').forEach(tok => {
+      const val = cs.getPropertyValue(tok).trim() || '—';
+      const el = document.createElement('div');
+      el.className = 'swatch';
+      el.innerHTML = `
+        <div class="chipc" style="background:${val};${val.startsWith('rgba') || tok==='--bubble-fill' ? 'background-image:linear-gradient(45deg,#1a1520 25%,transparent 25%,transparent 75%,#1a1520 75%),linear-gradient(45deg,#1a1520 25%,#241d2e 25%,#241d2e 75%,#1a1520 75%);background-size:14px 14px;background-position:0 0,7px 7px;background-blend-mode:normal;' : ''}"><div style="height:100%;background:${val}"></div></div>
+        <div class="meta"><b>${tok}</b><span>${val}</span></div>`;
+      grid.appendChild(el);
+    });
+  });
+}
+setTheme('app');
+</script>
+</body>
+</html>

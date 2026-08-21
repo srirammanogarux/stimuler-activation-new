@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Graph + Gift · Color Guide</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root{
+  /* ============ THE GOLD SYSTEM (edit these in Figma) ============ */
+  --gold-100:#FFF7C8;   /* lightest — gradient highlight on ₹ price, 92% numeral */
+  --gold-200:#FDF2C5;   /* coupon paper                                          */
+  --gold-300:#F2CB6B;   /* tag/CTA gradient light stop                           */
+  --gold-400:#E7B455;   /* PRIMARY light gold — curve highlight, borders         */
+  --gold-500:#D9A24A;   /* PRIMARY base gold — progress, headings, dot ring      */
+  --gold-600:#DD9435;   /* CTA gradient dark stop                                */
+  --gold-700:#C68F35;   /* progress gradient dark stop                           */
+  --gold-800:#B8863E;   /* gift box body                                         */
+  --gold-900:#7E5D22;   /* gift box inner lip (shadow side)                      */
+  --gold-ink:#241A05;   /* text ON gold (CTA label, tag text)                    */
+  --coupon-ink:#C7A014; /* "50% OFF" text on the coupon                          */
+
+  --bg:#0D0B14;         /* app background                                        */
+  --bg-raise:#0A0810;
+  --surface-1:#151515;  /* FAQ / testimonial container                           */
+  --surface-2:#1B1B1D;  /* cards inside containers                               */
+  --stroke:rgba(255,255,255,.08);
+
+  --indigo-500:#6C63FF; /* the ONE interactive colour (offer pill, plan select)  */
+  --strike:#E2574C;     /* struck-through original price                         */
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  background:#FAFAFB;
+  color:#17121F;
+  font-family:var(--font-body);
+  padding:0 0 100px;
+}
+header{
+  position:sticky;top:0;z-index:5;
+  background:rgba(250,250,251,.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #ECE9F1;
+  padding:20px 40px;
+}
+header h1{font-family:var(--font-display);font-weight:600;font-size:19px;}
+header p{margin-top:4px;font-size:13px;color:#8A8494;max-width:640px;line-height:1.5;}
+main{max-width:1180px;margin:0 auto;padding:0 40px;}
+section{margin-top:52px;}
+section > h2{
+  font-family:var(--font-display);font-weight:600;font-size:14px;
+  letter-spacing:.09em;text-transform:uppercase;color:#9A94A6;
+  padding-bottom:12px;border-bottom:1px solid #ECE9F1;margin-bottom:22px;
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(186px,1fr));gap:12px;}
+.sw{border:1px solid #ECE9F1;border-radius:12px;overflow:hidden;background:#fff;}
+.sw .chip{height:66px;}
+.sw .meta{padding:9px 11px;}
+.sw .meta b{display:block;font-family:ui-monospace,Menlo,monospace;font-size:11px;}
+.sw .meta code{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#6B6577;}
+.sw .meta span{display:block;margin-top:4px;font-size:11px;line-height:1.45;color:#9A94A6;}
+.note{
+  margin-top:14px;padding:12px 14px;border-radius:12px;
+  background:#FFF9E8;border:1px solid #F2E4B8;
+  font-size:12.5px;line-height:1.6;color:#6B5B22;
+}
+.note b{color:#3F3410;}
+/* dark previews */
+.dark{
+  border-radius:20px;background:var(--bg);padding:24px;
+  display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start;
+}
+.spec{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;color:#6E6884;margin-bottom:10px;display:block;}
+/* graph parts */
+.curve-demo{width:330px;}
+.curve-demo svg{width:100%;display:block;}
+.dot-demo{
+  width:18px;height:18px;border-radius:50%;background:#fff;
+  border:3.5px solid var(--gold-400);
+  box-shadow:0 0 18px rgba(231,180,85,.9), 0 0 44px rgba(217,162,74,.5);
+}
+.tag-demo{
+  display:inline-block;padding:8px 14px;border-radius:12px;
+  background:linear-gradient(180deg, var(--gold-300), var(--gold-500));
+  box-shadow:0 10px 26px -8px rgba(217,162,74,.55);text-align:center;
+}
+.tag-demo small{display:block;font-family:var(--font-display);font-weight:700;font-size:8.5px;letter-spacing:.1em;color:rgba(36,26,5,.65);}
+.tag-demo b{font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--gold-ink);}
+/* gift parts */
+.box-demo{width:168px;}
+.box-demo .lid{height:26px;border-radius:6px 6px 0 0;background:linear-gradient(180deg,var(--gold-300),var(--gold-800));}
+.box-demo .body{
+  position:relative;height:118px;overflow:hidden;
+  background:linear-gradient(180deg,#C6944A 0%,var(--gold-800) 14%,#A2762E 100%);
+  box-shadow:inset 0 -14px 26px rgba(0,0,0,.22);
+}
+.box-demo .lip{position:absolute;inset:0 0 auto;height:9px;background:var(--gold-900);}
+.box-demo .rib{position:absolute;top:0;bottom:0;left:67px;width:17px;background:linear-gradient(180deg,#FBEEB8,#EBD891);}
+.box-demo .rib2{left:85px;width:16px;background:linear-gradient(180deg,#FFF5CA,#F2E3A6);}
+.coupon-demo{
+  width:224px;height:120px;border-radius:14px;
+  background:linear-gradient(90deg,var(--gold-200) 50%,#FFFBE4 50%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+}
+.coupon-demo small{font-family:var(--font-display);font-weight:600;font-size:12px;color:#000;}
+.coupon-demo b{font-family:var(--font-display);font-weight:700;font-size:31px;color:var(--coupon-ink);}
+.ray-demo{
+  width:220px;height:150px;border-radius:14px;
+  background:conic-gradient(from 200deg at 50% 108%,
+    rgba(255,255,255,.11) 0deg 6deg, transparent 6deg 16deg,
+    rgba(255,255,255,.08) 16deg 21deg, transparent 21deg 33deg,
+    rgba(255,255,255,.11) 33deg 39deg, transparent 39deg 50deg);
+}
+/* cta + price */
+.cta-demo{
+  padding:16px 26px;border-radius:999px;text-align:center;
+  background:linear-gradient(83deg,var(--gold-600),var(--gold-300));
+  font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--gold-ink);
+  box-shadow:0 10px 30px -10px rgba(221,148,53,.6);
+}
+.price-demo{
+  width:290px;border:1.5px solid var(--gold-400);border-radius:16px;
+  background:rgba(217,162,74,.07);padding:18px 14px 12px;text-align:center;position:relative;
+}
+.price-demo .pill{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--indigo-500);color:#fff;font-family:var(--font-display);
+  font-weight:700;font-size:10.5px;letter-spacing:.05em;padding:5px 14px;border-radius:999px;white-space:nowrap;
+}
+.price-demo .row{display:flex;align-items:baseline;justify-content:center;gap:10px;}
+.price-demo s{font-family:var(--font-display);font-weight:600;font-size:20px;color:var(--strike);}
+.price-demo em{font-style:normal;font-family:var(--font-display);font-weight:700;font-size:34px;color:#fff;}
+.big92{
+  font-family:var(--font-display);font-weight:700;font-size:54px;
+  background:linear-gradient(100deg,var(--gold-100),var(--gold-600));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:12.5px;}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid #ECE9F1;vertical-align:top;}
+th{font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#9A94A6;}
+td code{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#17121F;background:#F4F2F8;padding:2px 6px;border-radius:5px;}
+td.sw-cell{width:34px;}
+td .dotcol{width:22px;height:22px;border-radius:6px;border:1px solid #E4E0EC;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Graph + Gift · Color Guide</h1>
+  <p>Every colour used by the growth graph, the gift transition and the two paywalls. Values are literal hex — copy them straight into Figma styles. The whole system is nine golds plus one indigo; nothing else is a brand colour.</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>01 · The gold ramp</h2>
+    <div class="grid" id="ramp"></div>
+    <div class="note"><b>Rule:</b> gold is progress &amp; reward only. The single interactive colour in this flow is indigo <code>#6C63FF</code> (offer pill, selected plan). Never use gold for a “tap me” affordance, and never use indigo for progress.</div>
+  </section>
+
+  <section>
+    <h2>02 · Surfaces &amp; support</h2>
+    <div class="grid" id="surf"></div>
+  </section>
+
+  <section>
+    <h2>03 · Graph anatomy</h2>
+    <div class="dark">
+      <div class="curve-demo">
+        <span class="spec">curve · stroke gold-400 → gold-500 · 4px round cap</span>
+        <svg viewBox="0 0 330 150">
+          <defs>
+            <linearGradient id="cg" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#E7B455"/><stop offset="1" stop-color="#D9A24A"/>
+            </linearGradient>
+            <linearGradient id="ag" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#E7B455" stop-opacity=".34"/>
+              <stop offset=".55" stop-color="#D9A24A" stop-opacity=".12"/>
+              <stop offset="1" stop-color="#D9A24A" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M4 128 C 70 122, 96 96, 150 92 C 220 86, 244 26, 326 14 L326 150 L4 150 Z" fill="url(#ag)"/>
+          <path d="M4 128 C 70 122, 96 96, 150 92 C 220 86, 244 26, 326 14" fill="none" stroke="url(#cg)" stroke-width="4" stroke-linecap="round"/>
+          <path d="M4 128 C 70 122, 96 96, 150 92 C 220 86, 244 26, 326 14" fill="none" stroke="#D9A24A" stroke-width="4" stroke-linecap="round" opacity=".2" transform="translate(0,-8)"/>
+        </svg>
+      </div>
+      <div>
+        <span class="spec">travelling dot</span>
+        <div class="dot-demo"></div>
+      </div>
+      <div>
+        <span class="spec">milestone tag</span>
+        <div class="tag-demo"><small>IN A YEAR</small><b>Master Fluency</b></div>
+      </div>
+      <div>
+        <span class="spec">92% numeral · gradient text</span>
+        <div class="big92">92%</div>
+      </div>
+    </div>
+    <table>
+      <tr><th></th><th>Part</th><th>Value</th><th>Notes</th></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:#E7B455"></div></td><td>Curve — lit</td><td><code>linear-gradient(#E7B455 → #D9A24A)</code>, 4px</td><td>the animated line</td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:#D9A24A;opacity:.2"></div></td><td>Curve — unlit track</td><td><code>#D9A24A @ 20%</code></td><td>the path ahead</td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:linear-gradient(#E7B45557,#D9A24A00)"></div></td><td>Area fill</td><td><code>#E7B455 34% → #D9A24A 12% → 0%</code></td><td>vertical, under the curve</td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:#fff"></div></td><td>Dot</td><td>fill <code>#FFFFFF</code>, ring <code>#E7B455</code> 3.5px</td><td>glow <code>0 0 18 rgba(231,180,85,.9)</code></td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:linear-gradient(#F2CB6B,#D9A24A)"></div></td><td>Tag</td><td><code>linear-gradient(180°, #F2CB6B → #D9A24A)</code></td><td>text <code>#241A05</code>, label 65% of it</td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:linear-gradient(#fff,#aaa)"></div></td><td>Drop line</td><td><code>#FFFFFF 55% → 5%</code>, 1.5px</td><td>dot → baseline</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>04 · Gift transition</h2>
+    <div class="dark">
+      <div>
+        <span class="spec">ray burst · white @ 8–11% on bg</span>
+        <div class="ray-demo"></div>
+      </div>
+      <div>
+        <span class="spec">box · lid + body + lip + ribbons</span>
+        <div class="box-demo">
+          <div class="lid"></div>
+          <div class="body"><i class="lip"></i><i class="rib"></i><i class="rib rib2"></i></div>
+        </div>
+      </div>
+      <div>
+        <span class="spec">coupon · gold-200 paper</span>
+        <div class="coupon-demo"><small>WELCOME OFFER</small><b>50% OFF</b></div>
+      </div>
+    </div>
+    <table>
+      <tr><th></th><th>Part</th><th>Value</th><th>Notes</th></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:#B8863E"></div></td><td>Box body</td><td><code>#C6944A → #B8863E 14% → #A2762E</code></td><td>inner shadow <code>0 -14 26 rgba(0,0,0,.22)</code></td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:#7E5D22"></div></td><td>Box inner lip</td><td><code>#7E5D22</code>, 9px</td><td>the open mouth</td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:#FBEEB8"></div></td><td>Ribbon (left)</td><td><code>#FBEEB8 → #EBD891</code></td><td>17px wide</td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:#FFF5CA"></div></td><td>Ribbon (right)</td><td><code>#FFF5CA → #F2E3A6</code></td><td>16px, the lit side</td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:#FDF2C5"></div></td><td>Coupon paper</td><td><code>#FDF2C5</code> / lit half <code>#FFFBE4</code></td><td>notched ticket edges</td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:#C7A014"></div></td><td>“50% OFF”</td><td><code>#C7A014</code></td><td>label above it is <code>#000</code></td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:#fff"></div></td><td>Rays / beam</td><td><code>#FFFFFF @ 8–11%</code></td><td>on <code>#0D0B14</code>; beam is a soft white cone</td></tr>
+    </table>
+    <div class="note"><b>Note for Figma:</b> the shipped gift art is the Figma purple set run through a hue-shift (purple → 42° gold) — if you re-export from Figma, recolour the source components with the ramp above rather than shifting hues again.</div>
+  </section>
+
+  <section>
+    <h2>05 · Paywall commerce</h2>
+    <div class="dark">
+      <div>
+        <span class="spec">primary CTA</span>
+        <div class="cta-demo">Get Stimuler PRO</div>
+      </div>
+      <div>
+        <span class="spec">offer price card</span>
+        <div class="price-demo">
+          <span class="pill">ONE TIME WELCOME 50% OFFER</span>
+          <div class="row"><s>₹1398</s><em>₹699</em></div>
+        </div>
+      </div>
+    </div>
+    <table>
+      <tr><th></th><th>Part</th><th>Value</th><th>Notes</th></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:linear-gradient(90deg,#DD9435,#F2CB6B)"></div></td><td>CTA</td><td><code>linear-gradient(83°, #DD9435 → #F2CB6B)</code></td><td>label <code>#241A05</code></td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:#6C63FF"></div></td><td>Offer pill</td><td><code>#6C63FF</code></td><td>the only indigo on the paywall</td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:#E2574C"></div></td><td>Struck price</td><td><code>#E2574C</code></td><td>original price, line-through</td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:rgba(217,162,74,.12);border-color:#E7B455"></div></td><td>Selected plan</td><td>bg <code>#D9A24A @ 13%</code>, border <code>#E7B455</code></td><td>unselected = white 4% / 14%</td></tr>
+      <tr><td class="sw-cell"><div class="dotcol" style="background:rgba(217,162,74,.10);border-color:#E7B455"></div></td><td>PRO column</td><td>bg <code>#D9A24A @ 10%</code>, border <code>#D9A24A @ 45%</code></td><td>text <code>#D9A24A</code></td></tr>
+    </table>
+  </section>
+
+</main>
+
+<script>
+const RAMP = [
+  ['--gold-100','#FFF7C8','Gradient highlight — 92% numeral, ₹ price sheen'],
+  ['--gold-200','#FDF2C5','Coupon paper'],
+  ['--gold-300','#F2CB6B','Tag + CTA gradient — light stop'],
+  ['--gold-400','#E7B455','Primary light — curve highlight, borders, dot ring'],
+  ['--gold-500','#D9A24A','Primary base — progress bar, gold headings, tags'],
+  ['--gold-600','#DD9435','CTA gradient — dark stop'],
+  ['--gold-700','#C68F35','Progress gradient — dark stop'],
+  ['--gold-800','#B8863E','Gift box body'],
+  ['--gold-900','#7E5D22','Gift box inner lip'],
+  ['--gold-ink','#241A05','Text on gold (CTA label, tag text)'],
+  ['--coupon-ink','#C7A014','“50% OFF” on the coupon'],
+];
+const SURF = [
+  ['--bg','#0D0B14','App background — every dark screen'],
+  ['--bg-raise','#0A0810','Status/progress header gradient end'],
+  ['--surface-1','#151515','FAQ + testimonial containers'],
+  ['--surface-2','#1B1B1D','Cards inside those containers'],
+  ['--stroke','rgba(255,255,255,.08)','Hairline borders'],
+  ['--indigo-500','#6C63FF','THE interactive colour'],
+  ['--strike','#E2574C','Struck-through price'],
+];
+const render = (id, rows) => {
+  document.getElementById(id).innerHTML = rows.map(([tok, hex, use]) => `
+    <div class="sw">
+      <div class="chip" style="background:${hex}"></div>
+      <div class="meta"><b>${tok}</b><code>${hex}</code><span>${use}</span></div>
+    </div>`).join('');
+};
+render('ramp', RAMP);
+render('surf', SURF);
+</script>
+</body>
+</html>
